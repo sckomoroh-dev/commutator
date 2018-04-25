@@ -8,30 +8,36 @@
 #include <exception>
 #include <algorithm>
 
-class SocketException : public std::exception
+namespace network
 {
-private:
-    std::string _message;
-
-public:
-    explicit SocketException(const char* message, int32_t errorCode)
-        : _message(message)
+    namespace sockets
     {
-        _message += " : ";
-        _message += strerror(errorCode);
-    }
+        class SocketException : public std::exception
+        {
+        private:
+            std::string _message;
 
-    explicit SocketException(std::string message, int32_t errorCode)
-        : _message(std::move(message))
-    {
-        _message += " : ";
-        _message += strerror(errorCode);
-    }
+        public:
+            explicit SocketException(const char *message, int32_t errorCode)
+                    : _message(message)
+            {
+                _message += " : ";
+                _message += strerror(errorCode);
+            }
 
-    const char* what() const noexcept override
-    {
-        return _message.c_str();
+            explicit SocketException(std::string message, int32_t errorCode)
+                    : _message(std::move(message))
+            {
+                _message += " : ";
+                _message += strerror(errorCode);
+            }
+
+            const char *what() const noexcept override
+            {
+                return _message.c_str();
+            }
+        };
     }
-};
+}
 
 #endif //COMMUTATOR_SOCKETEXCEPTION_H

@@ -1,17 +1,17 @@
 #include <cstdio>
 #include <thread>
 #include "network/tcp/TcpServerSocket.h"
+#include "network/udp/UdpServerSocket.h"
 
-void serverThreadFunc()
+using namespace network::sockets;
+
+void tcpServerThreadFunc()
 {
     char buffer[1024] = { 0 };
     strcpy(buffer, "Network message");
 
     printf("[SERVER] Start\n");
-    TcpServerSocket serverSocket("127.0.0.1", 8008);
-
-    printf("[SERVER] Create socket\n");
-    serverSocket.createSocket();
+    tcp::TcpServerSocket serverSocket("127.0.0.1", 8008);
 
     printf("[SERVER] Bind socket\n");
     serverSocket.bind();
@@ -40,15 +40,12 @@ void serverThreadFunc()
     serverSocket.close();
 }
 
-void clientThreadFunc()
+void tcpClientThreadFunc()
 {
     char buffer[1024] = { 0 };
 
     printf("[client] Start\n");
-    TcpClientSocket clientSocket("127.0.0.1", 8008);
-
-    printf("[client] Create socket\n");
-    clientSocket.createSocket();
+    tcp::TcpClientSocket clientSocket("127.0.0.1", 8008);
 
     printf("[client] Connect\n");
     clientSocket.connect();
@@ -68,13 +65,68 @@ void clientThreadFunc()
     clientSocket.close();
 }
 
+void udpServerThreadFunc()
+{
+    char buffer[1024] = { 0 };
+    printf("[SERVER] Start\n");
+    udp::UdpServerSocket serverSocket("127.0.0.1", 8010);
+
+    printf("[SERVER] Bind\n");
+    serverSocket.bind();
+
+    printf("[SERVER] Read from client\n");
+    auto clientSocket = serverSocket.readBuffer(static_cast<void*>(buffer), 1024);
+
+    printf("[SERVER] Received message: %s\n", buffer);
+
+    memset(buffer, 0, 1024);
+    strcpy(buffer, "Server response to client");
+
+    printf("[SERVER] Send to client\n");
+    clientSocket->sendBuffer(static_cast<void*>(buffer), 1024);
+
+    printf("[SERVER] Close socket\n");
+    serverSocket.close();
+}
+
+void udpClientThreadFunc()
+{
+    char buffer[1024] = { 0 };
+    strcpy(buffer, "Network message");
+
+    printf("[client] Start\n");
+    udp::UdpClientSocket clientSocket("127.0.0.1", 8010);
+
+    printf("[client] Send to server\n");
+    clientSocket.sendBuffer(static_cast<void*>(buffer), 1024);
+
+    memset(buffer, 0, 1024);
+
+    printf("[client] Read from server\n");
+    clientSocket.readBuffer(static_cast<void*>(buffer), 1024);
+
+    printf("[client] Received message: %s\n", buffer);
+
+    printf("[client] Close socket\n");
+    clientSocket.close();
+}
+
 int main()
 {
     printf("Start\n");
 
     {
-        std::thread serverThread(serverThreadFunc);
-        std::thread clientThread(clientThreadFunc);
+        printf("TCP section\n");
+        std::thread serverThread(tcpServerThreadFunc);
+        std::thread clientThread(tcpClientThreadFunc);
+        serverThread.join();
+        clientThread.join();
+    }
+
+    {
+        printf("UDP section\n");
+        std::thread serverThread(udpServerThreadFunc);
+        std::thread clientThread(udpClientThreadFunc);
         serverThread.join();
         clientThread.join();
     }

@@ -87,6 +87,9 @@
 		<Unit filename="/home/dev/repos/commutator/main.cpp">
 			<Option target="commutator"/>
 		</Unit>
+		<Unit filename="/home/dev/repos/commutator/network/Socket.h">
+			<Option target="commutator"/>
+		</Unit>
 		<Unit filename="/home/dev/repos/commutator/network/SocketException.h">
 			<Option target="commutator"/>
 		</Unit>
@@ -94,6 +97,18 @@
 			<Option target="commutator"/>
 		</Unit>
 		<Unit filename="/home/dev/repos/commutator/network/tcp/TcpServerSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/home/dev/repos/commutator/network/tcp/TcpSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/home/dev/repos/commutator/network/udp/UdpClientSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/home/dev/repos/commutator/network/udp/UdpServerSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/home/dev/repos/commutator/network/udp/UdpSocket.h">
 			<Option target="commutator"/>
 		</Unit>
 		<Unit filename="/home/dev/repos/commutator/CMakeLists.txt">

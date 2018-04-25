@@ -3,6 +3,11 @@
 
 CMakeFiles/commutator.dir/main.cpp.o
  /home/dev/repos/commutator/main.cpp
+ /home/dev/repos/commutator/network/Socket.h
  /home/dev/repos/commutator/network/SocketException.h
  /home/dev/repos/commutator/network/tcp/TcpClientSocket.h
  /home/dev/repos/commutator/network/tcp/TcpServerSocket.h
+ /home/dev/repos/commutator/network/tcp/TcpSocket.h
+ /home/dev/repos/commutator/network/udp/UdpClientSocket.h
+ /home/dev/repos/commutator/network/udp/UdpServerSocket.h
+ /home/dev/repos/commutator/network/udp/UdpSocket.h

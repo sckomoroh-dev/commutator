@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/commutator.dir/main.cpp.o  -o commutator -lpthread 

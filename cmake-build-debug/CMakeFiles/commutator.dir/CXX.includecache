@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/dev/repos/commutator/main.cpp
+cstdio
+-
+thread
+-
+network/tcp/TcpServerSocket.h
+/home/dev/repos/commutator/network/tcp/TcpServerSocket.h
+
+/home/dev/repos/commutator/network/SocketException.h
+exception
+-
+algorithm
+-
+
+/home/dev/repos/commutator/network/tcp/TcpClientSocket.h
+cstddef
+-
+sys/socket.h
+-
+sys/types.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+../SocketException.h
+/home/dev/repos/commutator/network/SocketException.h
+
+/home/dev/repos/commutator/network/tcp/TcpServerSocket.h
+memory
+-
+cstring
+-
+../SocketException.h
+/home/dev/repos/commutator/network/SocketException.h
+TcpClientSocket.h
+/home/dev/repos/commutator/network/tcp/TcpClientSocket.h
+

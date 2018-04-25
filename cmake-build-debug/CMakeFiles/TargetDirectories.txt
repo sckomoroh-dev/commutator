@@ -1,3 +1,0 @@
-/home/dev/repos/commutator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/dev/repos/commutator/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/dev/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir

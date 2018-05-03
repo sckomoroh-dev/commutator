@@ -21,7 +21,8 @@ namespace network
             class UdpSocket : public Socket
             {
             protected:
-                UdpSocket(const char *serverIp, uint16_t port)
+                template<typename TServerIp/**/, typename TPort>
+                UdpSocket(TServerIp&& serverIp, TPort&& port)
                     : Socket(serverIp, port)
                 {
                     _socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
@@ -31,10 +32,7 @@ namespace network
                     }
                 }
 
-                UdpSocket(int32_t socketDescriptor, struct sockaddr_in socketAddress)
-                    : Socket(socketDescriptor, socketAddress)
-                {
-                }
+                UdpSocket() = default;
             };
         }
     }

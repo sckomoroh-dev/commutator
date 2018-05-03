@@ -19,7 +19,8 @@ namespace network
             class TcpServerSocket : public TcpSocket
             {
             public:
-                TcpServerSocket(const char *serverIp, uint16_t port)
+                template<typename TServerIp/**/, typename TPort>
+                TcpServerSocket(TServerIp&& serverIp, TPort&& port)
                     : TcpSocket(serverIp, port)
                 {
                 }
@@ -42,7 +43,7 @@ namespace network
                     }
                 }
 
-                std::shared_ptr<TcpClientSocket> accept()
+                std::unique_ptr<TcpClientSocket> accept()
                 {
                     struct sockaddr_in clientSocketAddress = {0};
                     auto clientSocketAddressSize = sizeof(clientSocketAddress);
@@ -56,7 +57,7 @@ namespace network
                         throw SocketException("Unable to accept client socket", errno);
                     }
 
-                    return std::make_shared<TcpClientSocket>(clientSocketDescriptor, clientSocketAddress);
+                    return createSocket<TcpClientSocket>(clientSocketDescriptor, clientSocketAddress);
                 }
             };
         }

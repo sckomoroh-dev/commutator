@@ -18,7 +18,8 @@ namespace network
             class UdpServerSocket : public UdpSocket
             {
             public:
-                UdpServerSocket(const char *serverIp, uint16_t port)
+                template<typename TServerIp/**/, typename TPort>
+                UdpServerSocket(TServerIp&& serverIp, TPort&& port)
                     : UdpSocket(serverIp, port)
                 {
                 }
@@ -33,7 +34,7 @@ namespace network
                     }
                 }
 
-                std::shared_ptr<UdpClientSocket> readBuffer(void *buffer, size_t bufferSize)
+                std::unique_ptr<UdpClientSocket> readBuffer(void *buffer, size_t bufferSize)
                 {
                     struct sockaddr_in clientSocketAddr;
 
@@ -48,7 +49,7 @@ namespace network
                         throw SocketException("Unable to receive data from socket", errno);
                     }
 
-                    return std::make_shared<UdpClientSocket>(_socket, clientSocketAddr);
+                    return createSocket<UdpClientSocket>(_socket, clientSocketAddr);
                 }
             };
         }

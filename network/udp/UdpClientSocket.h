@@ -17,15 +17,13 @@ namespace network
             class UdpClientSocket : public UdpSocket
             {
             public:
-                UdpClientSocket(const char *serverIp, uint16_t port)
+                template<typename TServerIp/**/, typename TPort>
+                UdpClientSocket(TServerIp&& serverIp, TPort&& port)
                     : UdpSocket(serverIp, port)
                 {
                 }
 
-                UdpClientSocket(int32_t socketDescriptor, struct sockaddr_in socketAddress)
-                    : UdpSocket(socketDescriptor, socketAddress)
-                {
-                }
+                UdpClientSocket() = default;
 
                 void sendBuffer(void *buffer, size_t bufferSize)
                 {

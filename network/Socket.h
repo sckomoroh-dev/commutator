@@ -19,7 +19,8 @@ namespace network
             struct sockaddr_in _targetSocketAddress;
 
         protected:
-            Socket(const char *serverIp, uint16_t port)
+            template<typename TServerIp/**/, typename TPort>
+            Socket(TServerIp&& serverIp, TPort&& port)
                 : _socket(-1)
                 , _targetSocketAddress{0}
             {
@@ -28,10 +29,16 @@ namespace network
                 _targetSocketAddress.sin_addr.s_addr = inet_addr(serverIp);
             }
 
-            Socket(int32_t socketDescriptor, struct sockaddr_in socketAddress)
-                : _socket(socketDescriptor)
-                , _targetSocketAddress(socketAddress)
+            Socket() = default;
+
+            template<typename TTargetSocketType>
+            std::unique_ptr<TTargetSocketType> createSocket(const int32_t& socketDescriptor, const struct sockaddr_in& socketAddress)
             {
+                auto targetSocket = std::make_unique<TTargetSocketType>();
+                targetSocket->_socket = socketDescriptor;
+                targetSocket->_targetSocketAddress = socketAddress;
+
+                return targetSocket;
             }
 
         public:

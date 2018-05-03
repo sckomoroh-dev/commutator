@@ -2,6 +2,7 @@
 #include <thread>
 #include "network/tcp/TcpServerSocket.h"
 #include "network/udp/UdpServerSocket.h"
+#include "server/udp/UdpServer.h"
 
 using namespace network::sockets;
 
@@ -115,7 +116,8 @@ int main()
 {
     printf("Start\n");
 
-    {
+    UdpServer udpServer("127.0.0.1", 8090);
+    /*{
         printf("TCP section\n");
         std::thread serverThread(tcpServerThreadFunc);
         std::thread clientThread(tcpClientThreadFunc);
@@ -129,7 +131,7 @@ int main()
         std::thread clientThread(udpClientThreadFunc);
         serverThread.join();
         clientThread.join();
-    }
+    }*/
 
     printf("End\n");
 

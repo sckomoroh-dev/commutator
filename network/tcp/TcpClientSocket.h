@@ -16,15 +16,13 @@ namespace network
             class TcpClientSocket : public TcpSocket
             {
             public:
-                TcpClientSocket(const char *serverIp, uint16_t port)
+                template<typename TServerIp/**/, typename TPort>
+                TcpClientSocket(TServerIp&& serverIp, TPort&& port)
                     : TcpSocket(serverIp, port)
                 {
                 }
 
-                TcpClientSocket(int32_t socketDescriptor, struct sockaddr_in socketAddress)
-                    : TcpSocket(socketDescriptor, socketAddress)
-                {
-                }
+                TcpClientSocket() = default;
 
                 void connect()
                 {

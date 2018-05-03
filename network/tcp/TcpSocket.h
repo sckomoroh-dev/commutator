@@ -22,7 +22,8 @@ namespace network
             class TcpSocket : public Socket
             {
             protected:
-                TcpSocket(const char *serverIp, uint16_t port)
+                template<typename TServerIp/**/, typename TPort>
+                TcpSocket(TServerIp&& serverIp, TPort&& port)
                     : Socket(serverIp, port)
                 {
                     _socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -32,10 +33,7 @@ namespace network
                     }
                 }
 
-                TcpSocket(int32_t socketDescriptor, struct sockaddr_in socketAddress)
-                    : Socket(socketDescriptor, socketAddress)
-                {
-                }
+                TcpSocket() = default;
             };
         }
     }

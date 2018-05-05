@@ -10,6 +10,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <cerrno>
 #include "../SocketException.h"
 #include "../Socket.h"
 
@@ -22,16 +23,7 @@ namespace network
             class TcpSocket : public Socket
             {
             protected:
-                template<typename TServerIp/**/, typename TPort>
-                TcpSocket(TServerIp&& serverIp, TPort&& port)
-                    : Socket(serverIp, port)
-                {
-                    _socket = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-                    if (_socket == -1)
-                    {
-                        throw SocketException("Cannot to create the socket", errno);
-                    }
-                }
+                TcpSocket(const char* serverIp, int32_t port);
 
                 TcpSocket() = default;
             };

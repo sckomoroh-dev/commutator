@@ -4,9 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/dev/src/repos/commutator/main.cpp" "/home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/main.cpp.o"
+  "/Users/anna/repos/commutator/main.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/main.cpp.o"
+  "/Users/anna/repos/commutator/network/server/ServerException.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/server/ServerException.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/Socket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/SocketException.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/tcp/TcpServerSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/tcp/TcpSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/udp/UdpClientSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/udp/UdpServerSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o"
+  "/Users/anna/repos/commutator/network/sockets/udp/UdpSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

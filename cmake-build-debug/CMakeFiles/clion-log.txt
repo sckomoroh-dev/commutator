@@ -1,4 +1,4 @@
-/home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/dev/src/repos/commutator
+/Applications/CLion.app/Contents/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/anna/repos/commutator
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/dev/src/repos/commutator/cmake-build-debug
+-- Build files have been written to: /Users/anna/repos/commutator/cmake-build-debug

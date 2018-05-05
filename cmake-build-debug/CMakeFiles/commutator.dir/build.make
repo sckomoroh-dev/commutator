@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dev/src/repos/commutator
+CMAKE_SOURCE_DIR = /Users/anna/repos/commutator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dev/src/repos/commutator/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/anna/repos/commutator/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/commutator.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/commutator.dir/flags.make
 
 CMakeFiles/commutator.dir/main.cpp.o: CMakeFiles/commutator.dir/flags.make
 CMakeFiles/commutator.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/commutator.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/main.cpp.o -c /home/dev/src/repos/commutator/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/commutator.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/main.cpp.o -c /Users/anna/repos/commutator/main.cpp
 
 CMakeFiles/commutator.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dev/src/repos/commutator/main.cpp > CMakeFiles/commutator.dir/main.cpp.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/main.cpp > CMakeFiles/commutator.dir/main.cpp.i
 
 CMakeFiles/commutator.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dev/src/repos/commutator/main.cpp -o CMakeFiles/commutator.dir/main.cpp.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/main.cpp -o CMakeFiles/commutator.dir/main.cpp.s
 
 CMakeFiles/commutator.dir/main.cpp.o.requires:
 
@@ -81,17 +81,251 @@ CMakeFiles/commutator.dir/main.cpp.o.provides: CMakeFiles/commutator.dir/main.cp
 CMakeFiles/commutator.dir/main.cpp.o.provides.build: CMakeFiles/commutator.dir/main.cpp.o
 
 
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o: ../network/sockets/Socket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o -c /Users/anna/repos/commutator/network/sockets/Socket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/Socket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/Socket.cpp > CMakeFiles/commutator.dir/network/sockets/Socket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/Socket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/Socket.cpp -o CMakeFiles/commutator.dir/network/sockets/Socket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o: ../network/sockets/udp/UdpSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o -c /Users/anna/repos/commutator/network/sockets/udp/UdpSocket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/udp/UdpSocket.cpp > CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/udp/UdpSocket.cpp -o CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o: ../network/sockets/udp/UdpServerSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o -c /Users/anna/repos/commutator/network/sockets/udp/UdpServerSocket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/udp/UdpServerSocket.cpp > CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/udp/UdpServerSocket.cpp -o CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o: ../network/sockets/udp/UdpClientSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o -c /Users/anna/repos/commutator/network/sockets/udp/UdpClientSocket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/udp/UdpClientSocket.cpp > CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/udp/UdpClientSocket.cpp -o CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o: ../network/sockets/SocketException.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o -c /Users/anna/repos/commutator/network/sockets/SocketException.cpp
+
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/SocketException.cpp > CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/SocketException.cpp -o CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o: ../network/sockets/tcp/TcpSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o -c /Users/anna/repos/commutator/network/sockets/tcp/TcpSocket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/tcp/TcpSocket.cpp > CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/tcp/TcpSocket.cpp -o CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o: ../network/sockets/tcp/TcpServerSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o -c /Users/anna/repos/commutator/network/sockets/tcp/TcpServerSocket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/tcp/TcpServerSocket.cpp > CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/tcp/TcpServerSocket.cpp -o CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o: ../network/sockets/tcp/TcpClientSocket.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o -c /Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.cpp
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.cpp > CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.i
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.cpp -o CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.s
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.provides: CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.provides.build: CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o
+
+
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.o: CMakeFiles/commutator.dir/flags.make
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.o: ../network/server/ServerException.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/commutator.dir/network/server/ServerException.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/commutator.dir/network/server/ServerException.cpp.o -c /Users/anna/repos/commutator/network/server/ServerException.cpp
+
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/commutator.dir/network/server/ServerException.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/anna/repos/commutator/network/server/ServerException.cpp > CMakeFiles/commutator.dir/network/server/ServerException.cpp.i
+
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/commutator.dir/network/server/ServerException.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/anna/repos/commutator/network/server/ServerException.cpp -o CMakeFiles/commutator.dir/network/server/ServerException.cpp.s
+
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.requires:
+
+.PHONY : CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.requires
+
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.provides: CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.requires
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.provides.build
+.PHONY : CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.provides
+
+CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.provides.build: CMakeFiles/commutator.dir/network/server/ServerException.cpp.o
+
+
 # Object files for target commutator
 commutator_OBJECTS = \
-"CMakeFiles/commutator.dir/main.cpp.o"
+"CMakeFiles/commutator.dir/main.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o" \
+"CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o" \
+"CMakeFiles/commutator.dir/network/server/ServerException.cpp.o"
 
 # External object files for target commutator
 commutator_EXTERNAL_OBJECTS =
 
 commutator: CMakeFiles/commutator.dir/main.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o
+commutator: CMakeFiles/commutator.dir/network/server/ServerException.cpp.o
 commutator: CMakeFiles/commutator.dir/build.make
 commutator: CMakeFiles/commutator.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable commutator"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable commutator"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/commutator.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -100,6 +334,15 @@ CMakeFiles/commutator.dir/build: commutator
 .PHONY : CMakeFiles/commutator.dir/build
 
 CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/main.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o.requires
+CMakeFiles/commutator.dir/requires: CMakeFiles/commutator.dir/network/server/ServerException.cpp.o.requires
 
 .PHONY : CMakeFiles/commutator.dir/requires
 
@@ -108,6 +351,6 @@ CMakeFiles/commutator.dir/clean:
 .PHONY : CMakeFiles/commutator.dir/clean
 
 CMakeFiles/commutator.dir/depend:
-	cd /home/dev/src/repos/commutator/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/dev/src/repos/commutator /home/dev/src/repos/commutator /home/dev/src/repos/commutator/cmake-build-debug /home/dev/src/repos/commutator/cmake-build-debug /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/anna/repos/commutator/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/anna/repos/commutator /Users/anna/repos/commutator /Users/anna/repos/commutator/cmake-build-debug /Users/anna/repos/commutator/cmake-build-debug /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/commutator.dir/depend
 

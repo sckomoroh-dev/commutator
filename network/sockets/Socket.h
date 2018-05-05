@@ -6,7 +6,7 @@
 #define COMMUTATOR_SOCKET_H
 
 #include <cstdint>
-#include <unistd.h>
+#include <memory>
 
 namespace network
 {
@@ -18,19 +18,15 @@ namespace network
             int32_t _socket;
             struct sockaddr_in _targetSocketAddress;
 
-        protected:
-            template<typename TServerIp/**/, typename TPort>
-            Socket(TServerIp&& serverIp, TPort&& port)
-                : _socket(-1)
-                , _targetSocketAddress{0}
-            {
-                _targetSocketAddress.sin_family = AF_INET;
-                _targetSocketAddress.sin_port = htons(port);
-                _targetSocketAddress.sin_addr.s_addr = inet_addr(serverIp);
-            }
+        public:
+            void close();
 
+        protected:
             Socket() = default;
 
+            Socket(const char* serverIp, int32_t port);
+
+        protected:
             template<typename TTargetSocketType>
             std::unique_ptr<TTargetSocketType> createSocket(const int32_t& socketDescriptor, const struct sockaddr_in& socketAddress)
             {
@@ -39,16 +35,6 @@ namespace network
                 targetSocket->_targetSocketAddress = socketAddress;
 
                 return targetSocket;
-            }
-
-        public:
-            void close()
-            {
-                if (_socket != -1)
-                {
-                    ::close(_socket);
-                    _socket = -1;
-                }
             }
         };
     }

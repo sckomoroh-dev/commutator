@@ -3,6 +3,7 @@
 #include "network/tcp/TcpServerSocket.h"
 #include "network/udp/UdpServerSocket.h"
 #include "server/udp/UdpServer.h"
+#include "client/udp/UdpClient.h"
 
 using namespace network::sockets;
 
@@ -112,11 +113,44 @@ void udpClientThreadFunc()
     clientSocket.close();
 }
 
+auto g_init = false;
+
+void serverThread()
+{
+    server::udp::UdpServer udpServer("127.0.0.1", 8090);
+    udpServer.startServer();
+
+    g_init = true;
+
+    udpServer.waitIncommingRequests();
+}
+
+void clientThread()
+{
+    while (g_init == false)
+    {
+        sleep(1);
+    }
+
+    UdpClient udpClient("127.0.0.1", 8090);
+
+    while (true)
+    {
+        udpClient.sendHelloMessage();
+    }
+}
+
 int main()
 {
     printf("Start\n");
 
-    UdpServer udpServer("127.0.0.1", 8090);
+    std::thread server(serverThread);
+    std::thread client(clientThread);
+
+    server.join();
+    client.join();
+
+    //server::udp::UdpServer udpServer("127.0.0.1", 8090);
     /*{
         printf("TCP section\n");
         std::thread serverThread(tcpServerThreadFunc);

@@ -13,6 +13,6 @@ add_executable(commutator
         network/udp/UdpClientSocket.h
         network/udp/UdpServerSocket.h
         network/Socket.h
-        server/udp/UdpServer.h)
+        server/udp/UdpServer.h client/udp/UdpClient.h)
 
 target_link_libraries(commutator pthread)

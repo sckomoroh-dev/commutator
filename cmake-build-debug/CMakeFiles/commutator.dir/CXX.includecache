@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/dev/src/repos/commutator/client/udp/UdpClient.h
+cstring
+-
+../../network/udp/UdpClientSocket.h
+/home/dev/src/repos/commutator/network/udp/UdpClientSocket.h
+
 /home/dev/src/repos/commutator/main.cpp
 cstdio
 -
@@ -17,6 +23,8 @@ network/udp/UdpServerSocket.h
 /home/dev/src/repos/commutator/network/udp/UdpServerSocket.h
 server/udp/UdpServer.h
 /home/dev/src/repos/commutator/server/udp/UdpServer.h
+client/udp/UdpClient.h
+/home/dev/src/repos/commutator/client/udp/UdpClient.h
 
 /home/dev/src/repos/commutator/network/Socket.h
 cstdint

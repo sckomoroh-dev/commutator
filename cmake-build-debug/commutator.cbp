@@ -8,116 +8,142 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/dev/src/repos/commutator/cmake-build-debug"/>
+				<Option working_dir="/Users/anna/repos/commutator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/dev/src/repos/commutator/cmake-build-debug"/>
+				<Option working_dir="/Users/anna/repos/commutator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/dev/src/repos/commutator/cmake-build-debug"/>
+				<Option working_dir="/Users/anna/repos/commutator/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="commutator">
-				<Option output="/home/dev/src/repos/commutator/cmake-build-debug/commutator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dev/src/repos/commutator/cmake-build-debug"/>
+				<Option output="/Users/anna/repos/commutator/cmake-build-debug/commutator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/anna/repos/commutator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 commutator"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 commutator"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="commutator/fast">
-				<Option output="/home/dev/src/repos/commutator/cmake-build-debug/commutator" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/dev/src/repos/commutator/cmake-build-debug"/>
+				<Option output="/Users/anna/repos/commutator/cmake-build-debug/commutator" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/anna/repos/commutator/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/5"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
-					<Add directory="/usr/include/c++/5/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 commutator/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/dev/src/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 commutator/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/anna/repos/commutator/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/dev/src/repos/commutator/client/udp/UdpClient.h">
+		<Unit filename="/Users/anna/repos/commutator/main.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/main.cpp">
+		<Unit filename="/Users/anna/repos/commutator/network/client/udp/UdpClient.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/Socket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/server/ServerException.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/SocketException.h">
+		<Unit filename="/Users/anna/repos/commutator/network/server/ServerException.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/tcp/TcpClientSocket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/server/udp/UdpServer.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/tcp/TcpServerSocket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/Socket.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/tcp/TcpSocket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/Socket.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/udp/UdpClientSocket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/SocketException.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/udp/UdpServerSocket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/SocketException.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/udp/UdpSocket.h">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/server/udp/UdpServer.h">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/CMakeLists.txt">
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/tcp/TcpServerSocket.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/tcp/TcpServerSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/tcp/TcpSocket.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/tcp/TcpSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/udp/UdpClientSocket.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/udp/UdpClientSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/udp/UdpServerSocket.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/udp/UdpServerSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/udp/UdpSocket.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/sockets/udp/UdpSocket.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

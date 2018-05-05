@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/dev/src/repos/commutator
+CMAKE_SOURCE_DIR = /Users/anna/repos/commutator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/dev/src/repos/commutator/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/anna/repos/commutator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/dev/src/repos/commutator/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,249 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+network/server/ServerException.o: network/server/ServerException.cpp.o
+
+.PHONY : network/server/ServerException.o
+
+# target to build an object file
+network/server/ServerException.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.o
+.PHONY : network/server/ServerException.cpp.o
+
+network/server/ServerException.i: network/server/ServerException.cpp.i
+
+.PHONY : network/server/ServerException.i
+
+# target to preprocess a source file
+network/server/ServerException.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.i
+.PHONY : network/server/ServerException.cpp.i
+
+network/server/ServerException.s: network/server/ServerException.cpp.s
+
+.PHONY : network/server/ServerException.s
+
+# target to generate assembly for a file
+network/server/ServerException.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.s
+.PHONY : network/server/ServerException.cpp.s
+
+network/sockets/Socket.o: network/sockets/Socket.cpp.o
+
+.PHONY : network/sockets/Socket.o
+
+# target to build an object file
+network/sockets/Socket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o
+.PHONY : network/sockets/Socket.cpp.o
+
+network/sockets/Socket.i: network/sockets/Socket.cpp.i
+
+.PHONY : network/sockets/Socket.i
+
+# target to preprocess a source file
+network/sockets/Socket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/Socket.cpp.i
+.PHONY : network/sockets/Socket.cpp.i
+
+network/sockets/Socket.s: network/sockets/Socket.cpp.s
+
+.PHONY : network/sockets/Socket.s
+
+# target to generate assembly for a file
+network/sockets/Socket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/Socket.cpp.s
+.PHONY : network/sockets/Socket.cpp.s
+
+network/sockets/SocketException.o: network/sockets/SocketException.cpp.o
+
+.PHONY : network/sockets/SocketException.o
+
+# target to build an object file
+network/sockets/SocketException.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o
+.PHONY : network/sockets/SocketException.cpp.o
+
+network/sockets/SocketException.i: network/sockets/SocketException.cpp.i
+
+.PHONY : network/sockets/SocketException.i
+
+# target to preprocess a source file
+network/sockets/SocketException.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.i
+.PHONY : network/sockets/SocketException.cpp.i
+
+network/sockets/SocketException.s: network/sockets/SocketException.cpp.s
+
+.PHONY : network/sockets/SocketException.s
+
+# target to generate assembly for a file
+network/sockets/SocketException.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.s
+.PHONY : network/sockets/SocketException.cpp.s
+
+network/sockets/tcp/TcpClientSocket.o: network/sockets/tcp/TcpClientSocket.cpp.o
+
+.PHONY : network/sockets/tcp/TcpClientSocket.o
+
+# target to build an object file
+network/sockets/tcp/TcpClientSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o
+.PHONY : network/sockets/tcp/TcpClientSocket.cpp.o
+
+network/sockets/tcp/TcpClientSocket.i: network/sockets/tcp/TcpClientSocket.cpp.i
+
+.PHONY : network/sockets/tcp/TcpClientSocket.i
+
+# target to preprocess a source file
+network/sockets/tcp/TcpClientSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.i
+.PHONY : network/sockets/tcp/TcpClientSocket.cpp.i
+
+network/sockets/tcp/TcpClientSocket.s: network/sockets/tcp/TcpClientSocket.cpp.s
+
+.PHONY : network/sockets/tcp/TcpClientSocket.s
+
+# target to generate assembly for a file
+network/sockets/tcp/TcpClientSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.s
+.PHONY : network/sockets/tcp/TcpClientSocket.cpp.s
+
+network/sockets/tcp/TcpServerSocket.o: network/sockets/tcp/TcpServerSocket.cpp.o
+
+.PHONY : network/sockets/tcp/TcpServerSocket.o
+
+# target to build an object file
+network/sockets/tcp/TcpServerSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.o
+.PHONY : network/sockets/tcp/TcpServerSocket.cpp.o
+
+network/sockets/tcp/TcpServerSocket.i: network/sockets/tcp/TcpServerSocket.cpp.i
+
+.PHONY : network/sockets/tcp/TcpServerSocket.i
+
+# target to preprocess a source file
+network/sockets/tcp/TcpServerSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.i
+.PHONY : network/sockets/tcp/TcpServerSocket.cpp.i
+
+network/sockets/tcp/TcpServerSocket.s: network/sockets/tcp/TcpServerSocket.cpp.s
+
+.PHONY : network/sockets/tcp/TcpServerSocket.s
+
+# target to generate assembly for a file
+network/sockets/tcp/TcpServerSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpServerSocket.cpp.s
+.PHONY : network/sockets/tcp/TcpServerSocket.cpp.s
+
+network/sockets/tcp/TcpSocket.o: network/sockets/tcp/TcpSocket.cpp.o
+
+.PHONY : network/sockets/tcp/TcpSocket.o
+
+# target to build an object file
+network/sockets/tcp/TcpSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.o
+.PHONY : network/sockets/tcp/TcpSocket.cpp.o
+
+network/sockets/tcp/TcpSocket.i: network/sockets/tcp/TcpSocket.cpp.i
+
+.PHONY : network/sockets/tcp/TcpSocket.i
+
+# target to preprocess a source file
+network/sockets/tcp/TcpSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.i
+.PHONY : network/sockets/tcp/TcpSocket.cpp.i
+
+network/sockets/tcp/TcpSocket.s: network/sockets/tcp/TcpSocket.cpp.s
+
+.PHONY : network/sockets/tcp/TcpSocket.s
+
+# target to generate assembly for a file
+network/sockets/tcp/TcpSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/tcp/TcpSocket.cpp.s
+.PHONY : network/sockets/tcp/TcpSocket.cpp.s
+
+network/sockets/udp/UdpClientSocket.o: network/sockets/udp/UdpClientSocket.cpp.o
+
+.PHONY : network/sockets/udp/UdpClientSocket.o
+
+# target to build an object file
+network/sockets/udp/UdpClientSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.o
+.PHONY : network/sockets/udp/UdpClientSocket.cpp.o
+
+network/sockets/udp/UdpClientSocket.i: network/sockets/udp/UdpClientSocket.cpp.i
+
+.PHONY : network/sockets/udp/UdpClientSocket.i
+
+# target to preprocess a source file
+network/sockets/udp/UdpClientSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.i
+.PHONY : network/sockets/udp/UdpClientSocket.cpp.i
+
+network/sockets/udp/UdpClientSocket.s: network/sockets/udp/UdpClientSocket.cpp.s
+
+.PHONY : network/sockets/udp/UdpClientSocket.s
+
+# target to generate assembly for a file
+network/sockets/udp/UdpClientSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpClientSocket.cpp.s
+.PHONY : network/sockets/udp/UdpClientSocket.cpp.s
+
+network/sockets/udp/UdpServerSocket.o: network/sockets/udp/UdpServerSocket.cpp.o
+
+.PHONY : network/sockets/udp/UdpServerSocket.o
+
+# target to build an object file
+network/sockets/udp/UdpServerSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.o
+.PHONY : network/sockets/udp/UdpServerSocket.cpp.o
+
+network/sockets/udp/UdpServerSocket.i: network/sockets/udp/UdpServerSocket.cpp.i
+
+.PHONY : network/sockets/udp/UdpServerSocket.i
+
+# target to preprocess a source file
+network/sockets/udp/UdpServerSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.i
+.PHONY : network/sockets/udp/UdpServerSocket.cpp.i
+
+network/sockets/udp/UdpServerSocket.s: network/sockets/udp/UdpServerSocket.cpp.s
+
+.PHONY : network/sockets/udp/UdpServerSocket.s
+
+# target to generate assembly for a file
+network/sockets/udp/UdpServerSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpServerSocket.cpp.s
+.PHONY : network/sockets/udp/UdpServerSocket.cpp.s
+
+network/sockets/udp/UdpSocket.o: network/sockets/udp/UdpSocket.cpp.o
+
+.PHONY : network/sockets/udp/UdpSocket.o
+
+# target to build an object file
+network/sockets/udp/UdpSocket.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.o
+.PHONY : network/sockets/udp/UdpSocket.cpp.o
+
+network/sockets/udp/UdpSocket.i: network/sockets/udp/UdpSocket.cpp.i
+
+.PHONY : network/sockets/udp/UdpSocket.i
+
+# target to preprocess a source file
+network/sockets/udp/UdpSocket.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.i
+.PHONY : network/sockets/udp/UdpSocket.cpp.i
+
+network/sockets/udp/UdpSocket.s: network/sockets/udp/UdpSocket.cpp.s
+
+.PHONY : network/sockets/udp/UdpSocket.s
+
+# target to generate assembly for a file
+network/sockets/udp/UdpSocket.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/sockets/udp/UdpSocket.cpp.s
+.PHONY : network/sockets/udp/UdpSocket.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,6 +405,33 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... network/server/ServerException.o"
+	@echo "... network/server/ServerException.i"
+	@echo "... network/server/ServerException.s"
+	@echo "... network/sockets/Socket.o"
+	@echo "... network/sockets/Socket.i"
+	@echo "... network/sockets/Socket.s"
+	@echo "... network/sockets/SocketException.o"
+	@echo "... network/sockets/SocketException.i"
+	@echo "... network/sockets/SocketException.s"
+	@echo "... network/sockets/tcp/TcpClientSocket.o"
+	@echo "... network/sockets/tcp/TcpClientSocket.i"
+	@echo "... network/sockets/tcp/TcpClientSocket.s"
+	@echo "... network/sockets/tcp/TcpServerSocket.o"
+	@echo "... network/sockets/tcp/TcpServerSocket.i"
+	@echo "... network/sockets/tcp/TcpServerSocket.s"
+	@echo "... network/sockets/tcp/TcpSocket.o"
+	@echo "... network/sockets/tcp/TcpSocket.i"
+	@echo "... network/sockets/tcp/TcpSocket.s"
+	@echo "... network/sockets/udp/UdpClientSocket.o"
+	@echo "... network/sockets/udp/UdpClientSocket.i"
+	@echo "... network/sockets/udp/UdpClientSocket.s"
+	@echo "... network/sockets/udp/UdpServerSocket.o"
+	@echo "... network/sockets/udp/UdpServerSocket.i"
+	@echo "... network/sockets/udp/UdpServerSocket.s"
+	@echo "... network/sockets/udp/UdpSocket.o"
+	@echo "... network/sockets/udp/UdpSocket.i"
+	@echo "... network/sockets/udp/UdpSocket.s"
 .PHONY : help
 
 

@@ -11,6 +11,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include "../SocketException.h"
+#include "../Socket.h"
 
 namespace network
 {
@@ -21,16 +22,7 @@ namespace network
             class UdpSocket : public Socket
             {
             protected:
-                template<typename TServerIp/**/, typename TPort>
-                UdpSocket(TServerIp&& serverIp, TPort&& port)
-                    : Socket(serverIp, port)
-                {
-                    _socket = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-                    if (_socket == -1)
-                    {
-                        throw SocketException("Cannot to create the socket", errno);
-                    }
-                }
+                UdpSocket(const char*  serverIp, int32_t port);
 
                 UdpSocket() = default;
             };

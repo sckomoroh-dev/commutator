@@ -5,7 +5,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/anna/repos/commutator/main.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/main.cpp.o"
-  "/Users/anna/repos/commutator/network/server/ServerException.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/server/ServerException.cpp.o"
+  "/Users/anna/repos/commutator/network/cnp/CnpProtocol.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.o"
+  "/Users/anna/repos/commutator/network/cnp/client/udp/UdpClient.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o"
+  "/Users/anna/repos/commutator/network/cnp/server/ServerException.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/cnp/server/ServerException.cpp.o"
+  "/Users/anna/repos/commutator/network/cnp/server/udp/UdpServer.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o"
   "/Users/anna/repos/commutator/network/sockets/Socket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/Socket.cpp.o"
   "/Users/anna/repos/commutator/network/sockets/SocketException.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/SocketException.cpp.o"
   "/Users/anna/repos/commutator/network/sockets/tcp/TcpClientSocket.cpp" "/Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o"

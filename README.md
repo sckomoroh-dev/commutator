@@ -3,6 +3,7 @@
 This is draft version of the CNP protocol descriptionand of the Commutator description
 
 The target of the project it is a create a cross-platfrom client-server communication solution
+Note: This protocol is not support a big data transfer
 
 Linux:
 On the linux platfrom the communication with the server will be proceed thought the kernel module.

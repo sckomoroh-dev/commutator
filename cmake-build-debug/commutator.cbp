@@ -83,16 +83,34 @@
 		<Unit filename="/Users/anna/repos/commutator/main.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/Users/anna/repos/commutator/network/client/udp/UdpClient.h">
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/CnpProtocol.cpp">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/Users/anna/repos/commutator/network/server/ServerException.cpp">
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/CnpProtocol.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/Users/anna/repos/commutator/network/server/ServerException.h">
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/CnpStatuses.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/Users/anna/repos/commutator/network/server/udp/UdpServer.h">
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/client/udp/UdpClient.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/client/udp/UdpClient.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/server/ServerCommandConstants.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/server/ServerException.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/server/ServerException.h">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/server/udp/UdpServer.cpp">
+			<Option target="commutator"/>
+		</Unit>
+		<Unit filename="/Users/anna/repos/commutator/network/cnp/server/udp/UdpServer.h">
 			<Option target="commutator"/>
 		</Unit>
 		<Unit filename="/Users/anna/repos/commutator/network/sockets/Socket.cpp">

@@ -1,0 +1,11 @@
+//
+// Created by Anna on 06.05.18.
+//
+
+#ifndef COMMUTATOR_CNPSTATUSES_H
+#define COMMUTATOR_CNPSTATUSES_H
+
+#define CNP_STATUS_OK       "OK"
+#define CNP_STATUS_ERROR    "ERROR"
+
+#endif //COMMUTATOR_CNPSTATUSES_H

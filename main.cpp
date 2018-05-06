@@ -1,7 +1,8 @@
 #include <cstdio>
 #include <thread>
-#include "network/server/udp/UdpServer.h"
-#include "network/client/udp/UdpClient.h"
+#include "network/cnp/server/udp/UdpServer.h"
+#include "network/cnp/client/udp/UdpClient.h"
+#include "network/cnp/server/ServerCommandConstants.h"
 
 using namespace network::sockets;
 
@@ -12,6 +13,9 @@ void serverThread()
     printf ("Creating server\n");
     server::udp::UdpServer udpServer("127.0.0.1", 8090);
 
+    printf("Initializing the server\n");
+    udpServer.initializeServer();
+
     printf("Start server\n");
     udpServer.startServer();
 
@@ -19,7 +23,7 @@ void serverThread()
     g_init = true;
 
     printf("Wait incoming connections\n");
-    udpServer.waitIncommingRequests();
+    udpServer.waitInComingRequests();
 }
 
 void clientThread()
@@ -33,7 +37,10 @@ void clientThread()
 
     while (true)
     {
-        udpClient.sendHelloMessage();
+        udpClient.sendMessage(QUERY_SERVER_VERSION);
+        auto response = udpClient.readResponse();
+
+        printf("Response:\n-------------\n%s\n-------------\n\n", response.c_str());
     }
 }
 

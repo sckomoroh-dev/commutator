@@ -13,8 +13,8 @@ add_executable(commutator
         network/sockets/udp/UdpClientSocket.h
         network/sockets/udp/UdpServerSocket.h
         network/sockets/Socket.h
-        network/server/udp/UdpServer.h
-        network/client/udp/UdpClient.h
+        network/cnp/server/udp/UdpServer.h
+        network/cnp/client/udp/UdpClient.h
         network/sockets/Socket.cpp
         network/sockets/udp/UdpSocket.cpp
         network/sockets/udp/UdpServerSocket.cpp
@@ -22,6 +22,10 @@ add_executable(commutator
         network/sockets/SocketException.cpp
         network/sockets/tcp/TcpSocket.cpp
         network/sockets/tcp/TcpServerSocket.cpp
-        network/sockets/tcp/TcpClientSocket.cpp network/server/ServerException.cpp network/server/ServerException.h)
+        network/sockets/tcp/TcpClientSocket.cpp
+        network/cnp/server/ServerException.cpp
+        network/cnp/server/ServerException.h
+        network/cnp/server/ServerCommandConstants.h
+        network/cnp/server/udp/UdpServer.cpp network/cnp/CnpProtocol.cpp network/cnp/CnpProtocol.h network/cnp/CnpStatuses.h network/cnp/client/udp/UdpClient.cpp)
 
 target_link_libraries(commutator pthread)

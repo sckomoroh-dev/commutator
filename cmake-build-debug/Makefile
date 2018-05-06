@@ -150,32 +150,113 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-network/server/ServerException.o: network/server/ServerException.cpp.o
+network/cnp/CnpProtocol.o: network/cnp/CnpProtocol.cpp.o
 
-.PHONY : network/server/ServerException.o
+.PHONY : network/cnp/CnpProtocol.o
 
 # target to build an object file
-network/server/ServerException.cpp.o:
-	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.o
-.PHONY : network/server/ServerException.cpp.o
+network/cnp/CnpProtocol.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.o
+.PHONY : network/cnp/CnpProtocol.cpp.o
 
-network/server/ServerException.i: network/server/ServerException.cpp.i
+network/cnp/CnpProtocol.i: network/cnp/CnpProtocol.cpp.i
 
-.PHONY : network/server/ServerException.i
+.PHONY : network/cnp/CnpProtocol.i
 
 # target to preprocess a source file
-network/server/ServerException.cpp.i:
-	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.i
-.PHONY : network/server/ServerException.cpp.i
+network/cnp/CnpProtocol.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.i
+.PHONY : network/cnp/CnpProtocol.cpp.i
 
-network/server/ServerException.s: network/server/ServerException.cpp.s
+network/cnp/CnpProtocol.s: network/cnp/CnpProtocol.cpp.s
 
-.PHONY : network/server/ServerException.s
+.PHONY : network/cnp/CnpProtocol.s
 
 # target to generate assembly for a file
-network/server/ServerException.cpp.s:
-	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/server/ServerException.cpp.s
-.PHONY : network/server/ServerException.cpp.s
+network/cnp/CnpProtocol.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.s
+.PHONY : network/cnp/CnpProtocol.cpp.s
+
+network/cnp/client/udp/UdpClient.o: network/cnp/client/udp/UdpClient.cpp.o
+
+.PHONY : network/cnp/client/udp/UdpClient.o
+
+# target to build an object file
+network/cnp/client/udp/UdpClient.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o
+.PHONY : network/cnp/client/udp/UdpClient.cpp.o
+
+network/cnp/client/udp/UdpClient.i: network/cnp/client/udp/UdpClient.cpp.i
+
+.PHONY : network/cnp/client/udp/UdpClient.i
+
+# target to preprocess a source file
+network/cnp/client/udp/UdpClient.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.i
+.PHONY : network/cnp/client/udp/UdpClient.cpp.i
+
+network/cnp/client/udp/UdpClient.s: network/cnp/client/udp/UdpClient.cpp.s
+
+.PHONY : network/cnp/client/udp/UdpClient.s
+
+# target to generate assembly for a file
+network/cnp/client/udp/UdpClient.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.s
+.PHONY : network/cnp/client/udp/UdpClient.cpp.s
+
+network/cnp/server/ServerException.o: network/cnp/server/ServerException.cpp.o
+
+.PHONY : network/cnp/server/ServerException.o
+
+# target to build an object file
+network/cnp/server/ServerException.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/server/ServerException.cpp.o
+.PHONY : network/cnp/server/ServerException.cpp.o
+
+network/cnp/server/ServerException.i: network/cnp/server/ServerException.cpp.i
+
+.PHONY : network/cnp/server/ServerException.i
+
+# target to preprocess a source file
+network/cnp/server/ServerException.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/server/ServerException.cpp.i
+.PHONY : network/cnp/server/ServerException.cpp.i
+
+network/cnp/server/ServerException.s: network/cnp/server/ServerException.cpp.s
+
+.PHONY : network/cnp/server/ServerException.s
+
+# target to generate assembly for a file
+network/cnp/server/ServerException.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/server/ServerException.cpp.s
+.PHONY : network/cnp/server/ServerException.cpp.s
+
+network/cnp/server/udp/UdpServer.o: network/cnp/server/udp/UdpServer.cpp.o
+
+.PHONY : network/cnp/server/udp/UdpServer.o
+
+# target to build an object file
+network/cnp/server/udp/UdpServer.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o
+.PHONY : network/cnp/server/udp/UdpServer.cpp.o
+
+network/cnp/server/udp/UdpServer.i: network/cnp/server/udp/UdpServer.cpp.i
+
+.PHONY : network/cnp/server/udp/UdpServer.i
+
+# target to preprocess a source file
+network/cnp/server/udp/UdpServer.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.i
+.PHONY : network/cnp/server/udp/UdpServer.cpp.i
+
+network/cnp/server/udp/UdpServer.s: network/cnp/server/udp/UdpServer.cpp.s
+
+.PHONY : network/cnp/server/udp/UdpServer.s
+
+# target to generate assembly for a file
+network/cnp/server/udp/UdpServer.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.s
+.PHONY : network/cnp/server/udp/UdpServer.cpp.s
 
 network/sockets/Socket.o: network/sockets/Socket.cpp.o
 
@@ -405,9 +486,18 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... network/server/ServerException.o"
-	@echo "... network/server/ServerException.i"
-	@echo "... network/server/ServerException.s"
+	@echo "... network/cnp/CnpProtocol.o"
+	@echo "... network/cnp/CnpProtocol.i"
+	@echo "... network/cnp/CnpProtocol.s"
+	@echo "... network/cnp/client/udp/UdpClient.o"
+	@echo "... network/cnp/client/udp/UdpClient.i"
+	@echo "... network/cnp/client/udp/UdpClient.s"
+	@echo "... network/cnp/server/ServerException.o"
+	@echo "... network/cnp/server/ServerException.i"
+	@echo "... network/cnp/server/ServerException.s"
+	@echo "... network/cnp/server/udp/UdpServer.o"
+	@echo "... network/cnp/server/udp/UdpServer.i"
+	@echo "... network/cnp/server/udp/UdpServer.s"
 	@echo "... network/sockets/Socket.o"
 	@echo "... network/sockets/Socket.i"
 	@echo "... network/sockets/Socket.s"

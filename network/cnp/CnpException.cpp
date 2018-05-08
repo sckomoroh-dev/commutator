@@ -6,6 +6,8 @@
 
 #include "CnpException.h"
 
+using namespace network::cnp;
+
 CnpException::CnpException(const char *message)
     : _message(message)
 {

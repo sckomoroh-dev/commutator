@@ -11,34 +11,46 @@
 
 #include "CnpVersions.h"
 
-class CnpMessage
+namespace network
 {
-public:
-    CnpMessage() = default;
-    CnpMessage(const CnpMessage&) = delete;
-    CnpMessage(CnpMessage&&) = delete;
+    namespace cnp
+    {
+        namespace message
+        {
+            class CnpMessage
+            {
+            public:
+                CnpMessage() = default;
 
-    // TODO: Make deleted the operator =
+                CnpMessage(const CnpMessage &) = delete;
 
-public:
-    virtual const std::string toString() const = 0;
+                CnpMessage(CnpMessage &&) = delete;
 
-protected:
-    static std::map<std::string, std::string> requestToMap(const std::string &request);
+                // TODO: Make deleted the operator =
 
-    static CnpVersion stringToVersion(const std::string& strVersion);
+            public:
+                virtual const std::string toString() const = 0;
 
-    static const std::string versionToString(CnpVersion version);
+            protected:
+                static std::map<std::string, std::string> requestToMap(const std::string &request);
 
-private:
-    static const std::string getMessageVersion(const std::string &requestString);
+                static CnpVersion stringToVersion(const std::string &strVersion);
 
-    static std::list<std::string> splitMessageString(const std::string &inputString,
-                                                     char delimiter,
-                                                     bool single,
-                                                     std::function<std::string(std::string)> itemProcessingFunc);
+                static const std::string versionToString(CnpVersion version);
 
-    static std::pair<std::string, std::string> parseMessageItem(const std::string &requestField);;
-};
+            private:
+                static const std::string getMessageVersion(const std::string &requestString);
+
+                static std::list<std::string> splitMessageString(const std::string &inputString,
+                                                                 char delimiter,
+                                                                 bool single,
+                                                                 std::function<std::string(
+                                                                         std::string)> itemProcessingFunc);
+
+                static std::pair<std::string, std::string> parseMessageItem(const std::string &requestField);;
+            };
+        }
+    }
+}
 
 #endif //COMMUTATOR_CNPMESSAGE_H

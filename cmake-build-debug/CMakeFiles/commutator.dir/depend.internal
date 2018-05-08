@@ -10,7 +10,6 @@ CMakeFiles/commutator.dir/main.cpp.o
  /home/dev/src/repos/commutator/network/cnp/message/CnpResponse.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpStatus.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpVersions.h
- /home/dev/src/repos/commutator/network/cnp/server/ServerCommandConstants.h
  /home/dev/src/repos/commutator/network/cnp/server/udp/UdpServer.h
  /home/dev/src/repos/commutator/network/sockets/Socket.h
  /home/dev/src/repos/commutator/network/sockets/SocketException.h
@@ -26,6 +25,8 @@ CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o
  /home/dev/src/repos/commutator/network/cnp/client/udp/UdpClient.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpMessage.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpRequest.h
+ /home/dev/src/repos/commutator/network/cnp/message/CnpResponse.h
+ /home/dev/src/repos/commutator/network/cnp/message/CnpStatus.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpVersions.h
  /home/dev/src/repos/commutator/network/sockets/Socket.h
  /home/dev/src/repos/commutator/network/sockets/SocketException.h
@@ -60,7 +61,6 @@ CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o
  /home/dev/src/repos/commutator/network/cnp/message/CnpResponse.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpStatus.h
  /home/dev/src/repos/commutator/network/cnp/message/CnpVersions.h
- /home/dev/src/repos/commutator/network/cnp/server/ServerCommandConstants.h
  /home/dev/src/repos/commutator/network/cnp/server/udp/UdpServer.cpp
  /home/dev/src/repos/commutator/network/cnp/server/udp/UdpServer.h
  /home/dev/src/repos/commutator/network/sockets/Socket.h

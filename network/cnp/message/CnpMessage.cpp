@@ -5,6 +5,8 @@
 #include "CnpMessage.h"
 #include "../CnpException.h"
 
+using namespace network::cnp::message;
+
 std::map<std::string, std::string> CnpMessage::requestToMap(const std::string &request)
 {
     std::map<std::string, std::string> result;

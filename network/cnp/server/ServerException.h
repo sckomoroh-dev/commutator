@@ -8,21 +8,26 @@
 #include <exception>
 #include <string>
 
-namespace server
+namespace network
 {
-    class ServerException : public std::exception
+    namespace cnp
     {
-    private:
-        std::string _message;
+        namespace server
+        {
+            class ServerException : public std::exception
+            {
+            private:
+                std::string _message;
 
-    public:
-        explicit ServerException(const char *message, int32_t errorCode);
+            public:
+                explicit ServerException(const char *message, int32_t errorCode);
 
-        explicit ServerException(std::string&& message, int32_t errorCode);
+                explicit ServerException(std::string &&message, int32_t errorCode);
 
-        const char *what() const noexcept override;
-    };
+                const char *what() const noexcept override;
+            };
+        }
+    }
 }
-
 
 #endif //COMMUTATOR_SERVEREXCEPTION_H

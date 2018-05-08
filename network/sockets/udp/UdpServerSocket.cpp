@@ -11,17 +11,17 @@ UdpServerSocket::UdpServerSocket(const char *serverIp, int32_t port)
 {
 }
 
-void UdpServerSocket::bind()
+void UdpServerSocket::bind() const
 {
     if (::bind(_socket,
-               reinterpret_cast<struct sockaddr *>(&_targetSocketAddress),
+               reinterpret_cast<struct sockaddr *>(const_cast<struct sockaddr_in*>(&_targetSocketAddress)),
                sizeof(_targetSocketAddress)) < 0)
     {
         throw SocketException("Unable to bind server socket", errno);
     }
 }
 
-struct sockaddr_in UdpServerSocket::readBuffer(void *buffer, size_t bufferSize)
+struct sockaddr_in UdpServerSocket::readBuffer(void *buffer, size_t bufferSize) const
 {
     struct sockaddr_in clientSocketAddr;
 
@@ -39,7 +39,7 @@ struct sockaddr_in UdpServerSocket::readBuffer(void *buffer, size_t bufferSize)
     return clientSocketAddr;
 }
 
-void UdpServerSocket::sendBuffer(void *buffer, size_t bufferSize, struct sockaddr_in &targetAddress)
+void UdpServerSocket::sendBuffer(void *buffer, size_t bufferSize, struct sockaddr_in &targetAddress) const
 {
     if (sendto(_socket,
                buffer,

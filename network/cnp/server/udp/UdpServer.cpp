@@ -2,12 +2,15 @@
 // Created by sckomoroh on 06.05.18.
 //
 
+#include <sstream>
 #include <future>
 #include <cstring>
+#include <chrono>
+#include <thread>
 #include "UdpServer.h"
-#include "../ServerCommandConstants.h"
 
-using namespace server::udp;
+using namespace network::cnp::message;
+using namespace network::cnp::server::udp;
 
 UdpServer::UdpServer(const char *serverIp, int32_t port)
     : _udpServerSocket(serverIp, port)
@@ -19,10 +22,17 @@ void UdpServer::initializeServer()
 {
     auto getVersionFunc = [](const std::string& input) -> std::pair<std::string, CnpStatus>
     {
-        return std::make_pair<std::string, CnpStatus>("v1.0", CnpStatus::StatusOk);
+        return std::make_pair<const std::string, CnpStatus>("v1.0", CnpStatus::StatusOk);
     };
 
-    _methodsMap[QUERY_SERVER_VERSION] = getVersionFunc;
+    _methodsMap["GetVersion"] = getVersionFunc;
+
+    auto echoFunc = [](const std::string& input) -> std::pair<std::string, CnpStatus>
+    {
+        return std::make_pair<const std::string, CnpStatus >(std::move(input), CnpStatus::StatusOk);
+    };
+
+    _methodsMap["Echo"] = echoFunc;
 }
 
 void UdpServer::startServer()
@@ -42,7 +52,7 @@ void UdpServer::waitInComingRequests()
             continue;
         }
 
-        std::async(std::launch::async, clientMethod, this, std::move(targetAddress), messageHeaderLen);
+        auto asyncRes = std::async(std::launch::async, UdpServer::clientMethod, this, std::forward<struct sockaddr_in>(targetAddress), std::forward<uint32_t>(messageHeaderLen));
     }
 }
 
@@ -53,21 +63,15 @@ void UdpServer::stopServer()
     _udpServerSocket.close();
 }
 
-int UdpServer::clientMethod(UdpServer *thisPtr, struct sockaddr_in &&targetAddress, uint32_t messageLen)
+void UdpServer::clientMethod(UdpServer *thisPtr, struct sockaddr_in&& targetAddress, uint32_t&& messageLen)
 {
-    printf("Read client message (Msg len = %d)\n", messageLen);
     auto request = thisPtr->readRequest(targetAddress, messageLen);
 
-    printf("Received from client:\n---------------\n\n%s\n\n---------------\n\n", request->toString().c_str());
-
     auto response = thisPtr->getResponse(request);
-    auto responseString = response->toString();
 
-    uint32_t responseLength = responseString.length();
-    thisPtr->_udpServerSocket.sendBuffer(static_cast<void*>(&responseLength), sizeof(uint32_t), targetAddress);
-    thisPtr->_udpServerSocket.sendBuffer(static_cast<void*>(const_cast<char*>(responseString.c_str())), responseLength, targetAddress);
+    std::this_thread::sleep_for(std::chrono::seconds(1));
 
-    return 0;
+    thisPtr->sendResponse(response, std::move(targetAddress));
 }
 
 uint32_t UdpServer::readRequestLength(struct sockaddr_in &clientSocket)
@@ -118,14 +122,10 @@ std::shared_ptr<CnpResponse> UdpServer::getResponse(const std::shared_ptr<CnpReq
         // TODO: throw an exception
     }
 
-    printf("Get result for operation: '%s'\n", request->command().c_str());
     auto operationResultFunc = operationMethod->second;
     auto operationResult = operationResultFunc(request->data());
 
     auto response = CnpResponse::create(CnpVersion::Version10, request->command(), operationResult.first, operationResult.second);
-    printf("Server response:\n=======================\n%s\n=======================\n\n", response->toString().c_str());
 
     return response;
 }
-
-

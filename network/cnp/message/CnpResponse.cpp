@@ -7,6 +7,8 @@
 
 #include "CnpResponse.h"
 
+using namespace network::cnp::message;
+
 CnpVersion CnpResponse::version() const noexcept
 {
     return _version;

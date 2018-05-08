@@ -13,39 +13,62 @@
 #include "../../message/CnpResponse.h"
 
 
-namespace server
+namespace network
 {
-    namespace udp
+    namespace cnp
     {
-        class UdpServer
+        namespace server
         {
-        private:
-            network::sockets::udp::UdpServerSocket _udpServerSocket;
-            std::map<std::string, std::function<std::pair<std::string, CnpStatus>(const std::string&)>> _methodsMap;
-            std::atomic<bool> _needStopServer;
+            namespace udp
+            {
+                class UdpServer
+                {
+                private:
+                    network::sockets::udp::UdpServerSocket _udpServerSocket;
+                    std::map<std::string, std::function<std::pair<const std::string, message::CnpStatus>(const std::string &)>> _methodsMap;
+                    std::atomic<bool> _needStopServer;
 
-        public:
-            UdpServer(const char* serverIp, int32_t port);
+                public:
+                    UdpServer(const char *serverIp, int32_t port);
 
-            virtual ~UdpServer() = default;
+                    virtual ~UdpServer() = default;
 
-            void initializeServer();
+                    void initializeServer();
 
-            void startServer();
+                    void startServer();
 
-            void stopServer();
+                    void stopServer();
 
-            void waitInComingRequests();
+                    void waitInComingRequests();
 
-        private:
-            static int clientMethod(UdpServer *thisPtr, struct sockaddr_in &&targetAddress, uint32_t firstMessageLen);
+                private:
+                    static void clientMethod(UdpServer *thisPtr, struct sockaddr_in &&targetAddress, uint32_t&& firstMessageLen);
 
-            uint32_t readRequestLength(struct sockaddr_in &clientSocket);
+                    uint32_t readRequestLength(struct sockaddr_in &clientSocket);
 
-            std::shared_ptr<CnpRequest> readRequest(const struct sockaddr_in &targetAddress, uint32_t messageLen);
+                    std::shared_ptr<message::CnpRequest>
+                    readRequest(const struct sockaddr_in &targetAddress, uint32_t messageLen);
 
-            std::shared_ptr<CnpResponse> getResponse(const std::shared_ptr<CnpRequest>& request);
-        };
+                    std::shared_ptr<message::CnpResponse> getResponse(const std::shared_ptr<message::CnpRequest> &request);
+
+                    template<typename TResponse>
+                    void sendResponse(TResponse&& response, struct sockaddr_in&& targetAddress)
+                    {
+                        auto responseString = response->toString();
+
+                        uint32_t responseLength = responseString.length();
+                        _udpServerSocket.sendBuffer(static_cast<void*>(&responseLength), sizeof(uint32_t), targetAddress);
+                        _udpServerSocket.sendBuffer(static_cast<void*>(const_cast<char*>(responseString.c_str())), responseLength, targetAddress);
+                    }
+
+                    template <typename F, typename... Ts>
+                    inline auto reallyAsync(F&& f, Ts&&... params)
+                    {
+                        return std::async(std::launch::async, std::forward<F>(f), std::forward<Ts>(params)...);
+                    }
+                };
+            }
+        }
     }
 }
 

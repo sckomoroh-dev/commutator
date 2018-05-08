@@ -5,7 +5,7 @@
 #include <cstring>
 #include "ServerException.h"
 
-using namespace server;
+using namespace network::cnp::server;
 
 ServerException::ServerException(const char *message, int32_t errorCode)
     : _message(message)

@@ -123,9 +123,6 @@
 		<Unit filename="/home/dev/src/repos/commutator/network/cnp/message/CnpVersions.h">
 			<Option target="commutator"/>
 		</Unit>
-		<Unit filename="/home/dev/src/repos/commutator/network/cnp/server/ServerCommandConstants.h">
-			<Option target="commutator"/>
-		</Unit>
 		<Unit filename="/home/dev/src/repos/commutator/network/cnp/server/ServerException.cpp">
 			<Option target="commutator"/>
 		</Unit>

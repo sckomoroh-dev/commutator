@@ -1,18 +1,26 @@
 #include <cstdio>
 #include <thread>
+#include <future>
+
+#include <stdlib.h>
+
 #include "network/cnp/server/udp/UdpServer.h"
 #include "network/cnp/client/udp/UdpClient.h"
-#include "network/cnp/server/ServerCommandConstants.h"
-#include "network/cnp/message/CnpRequest.h"
 
 using namespace network::sockets;
 
 std::atomic<bool> g_init(false);
 
+template <typename F, typename... Ts>
+inline auto reallyAsync(F&& f, Ts&&... params)
+{
+    return std::async(std::launch::async, std::forward<F>(f), std::forward<Ts>(params)...);
+}
+
 void serverThread()
 {
     printf ("Creating server\n");
-    server::udp::UdpServer udpServer("127.0.0.1", 8090);
+    network::cnp::server::udp::UdpServer udpServer("127.0.0.1", 8090);
 
     printf("Initializing the server\n");
     udpServer.initializeServer();
@@ -34,14 +42,26 @@ void clientThread()
         sleep(1);
     }
 
-    client::udp::UdpClient udpClient("127.0.0.1", 8090);
-
-    while (true)
+    for (auto i=0; i<100; i++)
     {
-        udpClient.sendMessage(QUERY_SERVER_VERSION);
-        auto response = udpClient.readResponse();
+        auto asyncRes = reallyAsync([i]()
+        {
+            printf("");
+            network::cnp::client::udp::UdpClient udpClient("127.0.0.1", 8090);
+            char buffer[32] = { 0 };
+            sprintf(buffer, "%i %i", std::this_thread::get_id(), i);
 
-        printf("Response:\n-------------\n%s\n-------------\n\n", response.c_str());
+            auto request = network::cnp::message::CnpRequest::create(network::cnp::message::CnpVersion::Version10, "Echo", buffer);
+            printf("Request: \n=============\n%s\n=============\n\n", request->data().c_str());
+
+            udpClient.sendRequest(request);
+
+            auto response = udpClient.readResponse();
+
+            printf("Response:\n-------------\n%s\n-------------\n\n", response->data().c_str());
+        });
+
+        asyncRes.get();
     }
 }
 

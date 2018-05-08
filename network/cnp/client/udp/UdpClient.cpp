@@ -6,31 +6,15 @@
 #include "../../message/CnpRequest.h"
 #include <utility>
 
-using namespace client::udp;
+using namespace network::cnp::message;
+using namespace network::cnp::client::udp;
 
 UdpClient::UdpClient(const char *serverIp, int32_t port)
         : _udpClientSocket(serverIp, port)
 {
 }
 
-void UdpClient::sendMessage(std::string &&command)
-{
-    auto request = CnpRequest::create(CnpVersion::Version10, command);
-
-    auto requestString = request->toString();
-    uint32_t bufferLen = requestString.length();
-
-    _udpClientSocket.sendBuffer(static_cast<void*>(&bufferLen), sizeof(uint32_t));
-
-    _udpClientSocket.sendBuffer(static_cast<void *>(const_cast<char*>(requestString.c_str())), bufferLen);
-}
-
-void UdpClient::sendMessage(std::string &command)
-{
-    sendMessage(std::move(command));
-}
-
-const std::string UdpClient::readResponse()
+const std::shared_ptr<CnpResponse> UdpClient::readResponse() const
 {
     uint32_t messageLen;
 
@@ -51,7 +35,5 @@ const std::string UdpClient::readResponse()
 
     _udpClientSocket.readBuffer(static_cast<void*>(buffer.get()), messageLen);
 
-    std::string response(buffer.get());
-
-    return response;
+    return CnpResponse::fromString(buffer.get());
 }

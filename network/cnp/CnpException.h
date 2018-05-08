@@ -8,22 +8,27 @@
 #include <string>
 #include <exception>
 
-class CnpException : public std::exception
+namespace network
 {
-private:
-    std::string _message;
+    namespace cnp
+    {
+        class CnpException : public std::exception
+        {
+        private:
+            std::string _message;
 
-public:
-    explicit CnpException(const char *message);
+        public:
+            explicit CnpException(const char *message);
 
-    explicit CnpException(std::string&& message);
+            explicit CnpException(std::string &&message);
 
-    explicit CnpException(const char *message, int32_t errorCode);
+            explicit CnpException(const char *message, int32_t errorCode);
 
-    explicit CnpException(std::string&& message, int32_t errorCode);
+            explicit CnpException(std::string &&message, int32_t errorCode);
 
-    const char *what() const noexcept override;
-};
-
+            const char *what() const noexcept override;
+        };
+    }
+}
 
 #endif //COMMUTATOR_CNPEXCEPTION_H

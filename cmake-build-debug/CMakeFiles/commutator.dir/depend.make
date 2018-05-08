@@ -9,7 +9,6 @@ CMakeFiles/commutator.dir/main.cpp.o: ../network/cnp/message/CnpRequest.h
 CMakeFiles/commutator.dir/main.cpp.o: ../network/cnp/message/CnpResponse.h
 CMakeFiles/commutator.dir/main.cpp.o: ../network/cnp/message/CnpStatus.h
 CMakeFiles/commutator.dir/main.cpp.o: ../network/cnp/message/CnpVersions.h
-CMakeFiles/commutator.dir/main.cpp.o: ../network/cnp/server/ServerCommandConstants.h
 CMakeFiles/commutator.dir/main.cpp.o: ../network/cnp/server/udp/UdpServer.h
 CMakeFiles/commutator.dir/main.cpp.o: ../network/sockets/Socket.h
 CMakeFiles/commutator.dir/main.cpp.o: ../network/sockets/SocketException.h
@@ -25,6 +24,8 @@ CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp
 CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp/client/udp/UdpClient.h
 CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp/message/CnpMessage.h
 CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp/message/CnpRequest.h
+CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp/message/CnpResponse.h
+CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp/message/CnpStatus.h
 CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/cnp/message/CnpVersions.h
 CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/sockets/Socket.h
 CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o: ../network/sockets/SocketException.h
@@ -59,7 +60,6 @@ CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp
 CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp/message/CnpResponse.h
 CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp/message/CnpStatus.h
 CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp/message/CnpVersions.h
-CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp/server/ServerCommandConstants.h
 CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp/server/udp/UdpServer.cpp
 CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/cnp/server/udp/UdpServer.h
 CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o: ../network/sockets/Socket.h

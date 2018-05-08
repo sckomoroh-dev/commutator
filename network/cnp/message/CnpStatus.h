@@ -5,10 +5,19 @@
 #ifndef COMMUTATOR_CNPSTATUSES_H
 #define COMMUTATOR_CNPSTATUSES_H
 
-enum class CnpStatus
+namespace network
 {
-    StatusOk,
-    StatusError
-};
+    namespace cnp
+    {
+        namespace message
+        {
+            enum class CnpStatus
+            {
+                StatusOk,
+                StatusError
+            };
+        }
+    }
+}
 
 #endif //COMMUTATOR_CNPSTATUSES_H

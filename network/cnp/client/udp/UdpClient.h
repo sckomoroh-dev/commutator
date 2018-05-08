@@ -7,26 +7,59 @@
 
 
 #include <cstring>
+#include <future>
+#include "../../message/CnpVersions.h"
+#include "../../message/CnpRequest.h"
 #include "../../../sockets/udp/UdpClientSocket.h"
+#include "../../message/CnpResponse.h"
 
-namespace client
+namespace network
 {
-    namespace udp
+    namespace cnp
     {
-        class UdpClient
+        namespace client
         {
-        private:
-            network::sockets::udp::UdpClientSocket _udpClientSocket;
+            namespace udp
+            {
+                class UdpClient
+                {
+                private:
+                    network::sockets::udp::UdpClientSocket _udpClientSocket;
 
-        public:
-            UdpClient(const char* serverIp, int32_t port);
+                public:
+                    UdpClient(const char *serverIp, int32_t port);
 
-            void sendMessage(std::string& command);
+                    template<typename TCommand>
+                    void sendMessage(TCommand&& command)
+                    {
+                        auto request = message::CnpRequest::create(message::CnpVersion::Version10, std::forward<std::string>(command));
 
-            void sendMessage(std::string&& command);
+                        sendRequest(std::move(request));
+                    }
 
-            const std::string readResponse();
-        };
+                    template<typename TCommand, typename TData>
+                    void sendMessage(TCommand&& command, TData&& data)
+                    {
+                        auto request = message::CnpRequest::create(message::CnpVersion::Version10, std::forward<std::string>(command), std::forward<std::string>(data));
+
+                        sendRequest(std::move(request));
+                    }
+
+                    template<typename TRequest>
+                    void sendRequest(TRequest&& request)
+                    {
+                        auto requestString = request->toString();
+                        uint32_t bufferLen = requestString.length();
+
+                        _udpClientSocket.sendBuffer(static_cast<void*>(&bufferLen), sizeof(uint32_t));
+
+                        _udpClientSocket.sendBuffer(static_cast<void *>(const_cast<char*>(requestString.c_str())), bufferLen);
+                    }
+
+                    const std::shared_ptr<message::CnpResponse> readResponse() const;
+                };
+            }
+        }
     }
 }
 

@@ -7,9 +7,18 @@
 
 #include <string>
 
-enum class CnpVersion
+namespace network
 {
-    Version10
-};
+    namespace cnp
+    {
+        namespace message
+        {
+            enum class CnpVersion
+            {
+                Version10
+            };
+        }
+    }
+}
 
 #endif //COMMUTATOR_CNPVERSIONS_H

@@ -1,5 +1,5 @@
 //
-// Created by dev on 5/3/18.
+// Created by sckomoroh on 5/3/18.
 //
 
 #ifndef COMMUTATOR_UDPCLIENT_H
@@ -8,13 +8,12 @@
 
 #include <cstring>
 #include "../../../sockets/udp/UdpClientSocket.h"
-#include "../../CnpProtocol.h"
 
 namespace client
 {
     namespace udp
     {
-        class UdpClient : protected CnpProtocol
+        class UdpClient
         {
         private:
             network::sockets::udp::UdpClientSocket _udpClientSocket;

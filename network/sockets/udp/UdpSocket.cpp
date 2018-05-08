@@ -1,5 +1,5 @@
 //
-// Created by Anna on 05.05.18.
+// Created by sckomoroh on 05.05.18.
 //
 
 #include "UdpSocket.h"

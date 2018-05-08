@@ -1,11 +1,14 @@
 //
-// Created by Anna on 06.05.18.
+// Created by sckomoroh on 06.05.18.
 //
 
 #ifndef COMMUTATOR_CNPSTATUSES_H
 #define COMMUTATOR_CNPSTATUSES_H
 
-#define CNP_STATUS_OK       "OK"
-#define CNP_STATUS_ERROR    "ERROR"
+enum class CnpStatus
+{
+    StatusOk,
+    StatusError
+};
 
 #endif //COMMUTATOR_CNPSTATUSES_H

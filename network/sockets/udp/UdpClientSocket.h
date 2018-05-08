@@ -1,5 +1,5 @@
 //
-// Created by dev on 4/25/18.
+// Created by sckomoroh on 4/25/18.
 //
 
 #ifndef COMMUTATOR_UDPCLIENTSOCKET_H

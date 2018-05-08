@@ -10,8 +10,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/commutator.dir/network/sockets/tcp/TcpClientSocket.cpp.o"
   "CMakeFiles/commutator.dir/network/cnp/server/ServerException.cpp.o"
   "CMakeFiles/commutator.dir/network/cnp/server/udp/UdpServer.cpp.o"
-  "CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.o"
   "CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.o"
+  "CMakeFiles/commutator.dir/network/cnp/message/CnpRequest.cpp.o"
+  "CMakeFiles/commutator.dir/network/cnp/message/CnpResponse.cpp.o"
+  "CMakeFiles/commutator.dir/network/cnp/CnpException.cpp.o"
+  "CMakeFiles/commutator.dir/network/cnp/message/CnpMessage.cpp.o"
   "commutator.pdb"
   "commutator"
 )

@@ -1,5 +1,5 @@
 //
-// Created by dev on 4/24/18.
+// Created by sckomoroh on 4/24/18.
 //
 
 #ifndef COMMUTATOR_TCPSERVERSOCKET_H

@@ -1,8 +1,9 @@
 //
-// Created by Anna on 06.05.18.
+// Created by sckomoroh on 06.05.18.
 //
 
 #include "UdpClient.h"
+#include "../../message/CnpRequest.h"
 #include <utility>
 
 using namespace client::udp;
@@ -14,13 +15,14 @@ UdpClient::UdpClient(const char *serverIp, int32_t port)
 
 void UdpClient::sendMessage(std::string &&command)
 {
-    auto requestMessage = buildRequestBody(command);
+    auto request = CnpRequest::create(CnpVersion::Version10, command);
 
-    uint32_t bufferLen = requestMessage.length();
+    auto requestString = request->toString();
+    uint32_t bufferLen = requestString.length();
 
     _udpClientSocket.sendBuffer(static_cast<void*>(&bufferLen), sizeof(uint32_t));
 
-    _udpClientSocket.sendBuffer(static_cast<void *>(const_cast<char*>(requestMessage.c_str())), bufferLen);
+    _udpClientSocket.sendBuffer(static_cast<void *>(const_cast<char*>(requestString.c_str())), bufferLen);
 }
 
 void UdpClient::sendMessage(std::string &command)
@@ -38,12 +40,18 @@ const std::string UdpClient::readResponse()
         // TODO: throw an exception
     }
 
-    char* buffer = static_cast<char*>(malloc(messageLen));
-    _udpClientSocket.readBuffer(static_cast<void*>(buffer), messageLen);
+    std::shared_ptr<char> buffer(
+        [messageLen]() -> char*
+        {
+            char* buffer = static_cast<char*>(malloc(messageLen + 1));
+            memset(buffer, 0, messageLen + 1);
+            return buffer;
+        }(),
+        ::free);
 
-    std::string response(buffer);
+    _udpClientSocket.readBuffer(static_cast<void*>(buffer.get()), messageLen);
 
-    free(buffer);
+    std::string response(buffer.get());
 
     return response;
 }

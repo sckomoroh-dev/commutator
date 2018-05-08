@@ -3,6 +3,7 @@
 #include "network/cnp/server/udp/UdpServer.h"
 #include "network/cnp/client/udp/UdpClient.h"
 #include "network/cnp/server/ServerCommandConstants.h"
+#include "network/cnp/message/CnpRequest.h"
 
 using namespace network::sockets;
 

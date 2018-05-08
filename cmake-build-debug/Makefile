@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/bin/cmake
+CMAKE_COMMAND = /home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/bin/cmake -E remove -f
+RM = /home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/anna/repos/commutator
+CMAKE_SOURCE_DIR = /home/dev/src/repos/commutator
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/anna/repos/commutator/cmake-build-debug
+CMAKE_BINARY_DIR = /home/dev/src/repos/commutator/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/anna/repos/commutator/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/dev/apps/clion-2017.3.4/bin/cmake/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/anna/repos/commutator/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dev/src/repos/commutator/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,32 +150,32 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-network/cnp/CnpProtocol.o: network/cnp/CnpProtocol.cpp.o
+network/cnp/CnpException.o: network/cnp/CnpException.cpp.o
 
-.PHONY : network/cnp/CnpProtocol.o
+.PHONY : network/cnp/CnpException.o
 
 # target to build an object file
-network/cnp/CnpProtocol.cpp.o:
-	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.o
-.PHONY : network/cnp/CnpProtocol.cpp.o
+network/cnp/CnpException.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpException.cpp.o
+.PHONY : network/cnp/CnpException.cpp.o
 
-network/cnp/CnpProtocol.i: network/cnp/CnpProtocol.cpp.i
+network/cnp/CnpException.i: network/cnp/CnpException.cpp.i
 
-.PHONY : network/cnp/CnpProtocol.i
+.PHONY : network/cnp/CnpException.i
 
 # target to preprocess a source file
-network/cnp/CnpProtocol.cpp.i:
-	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.i
-.PHONY : network/cnp/CnpProtocol.cpp.i
+network/cnp/CnpException.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpException.cpp.i
+.PHONY : network/cnp/CnpException.cpp.i
 
-network/cnp/CnpProtocol.s: network/cnp/CnpProtocol.cpp.s
+network/cnp/CnpException.s: network/cnp/CnpException.cpp.s
 
-.PHONY : network/cnp/CnpProtocol.s
+.PHONY : network/cnp/CnpException.s
 
 # target to generate assembly for a file
-network/cnp/CnpProtocol.cpp.s:
-	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpProtocol.cpp.s
-.PHONY : network/cnp/CnpProtocol.cpp.s
+network/cnp/CnpException.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/CnpException.cpp.s
+.PHONY : network/cnp/CnpException.cpp.s
 
 network/cnp/client/udp/UdpClient.o: network/cnp/client/udp/UdpClient.cpp.o
 
@@ -203,6 +203,87 @@ network/cnp/client/udp/UdpClient.s: network/cnp/client/udp/UdpClient.cpp.s
 network/cnp/client/udp/UdpClient.cpp.s:
 	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/client/udp/UdpClient.cpp.s
 .PHONY : network/cnp/client/udp/UdpClient.cpp.s
+
+network/cnp/message/CnpMessage.o: network/cnp/message/CnpMessage.cpp.o
+
+.PHONY : network/cnp/message/CnpMessage.o
+
+# target to build an object file
+network/cnp/message/CnpMessage.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpMessage.cpp.o
+.PHONY : network/cnp/message/CnpMessage.cpp.o
+
+network/cnp/message/CnpMessage.i: network/cnp/message/CnpMessage.cpp.i
+
+.PHONY : network/cnp/message/CnpMessage.i
+
+# target to preprocess a source file
+network/cnp/message/CnpMessage.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpMessage.cpp.i
+.PHONY : network/cnp/message/CnpMessage.cpp.i
+
+network/cnp/message/CnpMessage.s: network/cnp/message/CnpMessage.cpp.s
+
+.PHONY : network/cnp/message/CnpMessage.s
+
+# target to generate assembly for a file
+network/cnp/message/CnpMessage.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpMessage.cpp.s
+.PHONY : network/cnp/message/CnpMessage.cpp.s
+
+network/cnp/message/CnpRequest.o: network/cnp/message/CnpRequest.cpp.o
+
+.PHONY : network/cnp/message/CnpRequest.o
+
+# target to build an object file
+network/cnp/message/CnpRequest.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpRequest.cpp.o
+.PHONY : network/cnp/message/CnpRequest.cpp.o
+
+network/cnp/message/CnpRequest.i: network/cnp/message/CnpRequest.cpp.i
+
+.PHONY : network/cnp/message/CnpRequest.i
+
+# target to preprocess a source file
+network/cnp/message/CnpRequest.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpRequest.cpp.i
+.PHONY : network/cnp/message/CnpRequest.cpp.i
+
+network/cnp/message/CnpRequest.s: network/cnp/message/CnpRequest.cpp.s
+
+.PHONY : network/cnp/message/CnpRequest.s
+
+# target to generate assembly for a file
+network/cnp/message/CnpRequest.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpRequest.cpp.s
+.PHONY : network/cnp/message/CnpRequest.cpp.s
+
+network/cnp/message/CnpResponse.o: network/cnp/message/CnpResponse.cpp.o
+
+.PHONY : network/cnp/message/CnpResponse.o
+
+# target to build an object file
+network/cnp/message/CnpResponse.cpp.o:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpResponse.cpp.o
+.PHONY : network/cnp/message/CnpResponse.cpp.o
+
+network/cnp/message/CnpResponse.i: network/cnp/message/CnpResponse.cpp.i
+
+.PHONY : network/cnp/message/CnpResponse.i
+
+# target to preprocess a source file
+network/cnp/message/CnpResponse.cpp.i:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpResponse.cpp.i
+.PHONY : network/cnp/message/CnpResponse.cpp.i
+
+network/cnp/message/CnpResponse.s: network/cnp/message/CnpResponse.cpp.s
+
+.PHONY : network/cnp/message/CnpResponse.s
+
+# target to generate assembly for a file
+network/cnp/message/CnpResponse.cpp.s:
+	$(MAKE) -f CMakeFiles/commutator.dir/build.make CMakeFiles/commutator.dir/network/cnp/message/CnpResponse.cpp.s
+.PHONY : network/cnp/message/CnpResponse.cpp.s
 
 network/cnp/server/ServerException.o: network/cnp/server/ServerException.cpp.o
 
@@ -486,12 +567,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... network/cnp/CnpProtocol.o"
-	@echo "... network/cnp/CnpProtocol.i"
-	@echo "... network/cnp/CnpProtocol.s"
+	@echo "... network/cnp/CnpException.o"
+	@echo "... network/cnp/CnpException.i"
+	@echo "... network/cnp/CnpException.s"
 	@echo "... network/cnp/client/udp/UdpClient.o"
 	@echo "... network/cnp/client/udp/UdpClient.i"
 	@echo "... network/cnp/client/udp/UdpClient.s"
+	@echo "... network/cnp/message/CnpMessage.o"
+	@echo "... network/cnp/message/CnpMessage.i"
+	@echo "... network/cnp/message/CnpMessage.s"
+	@echo "... network/cnp/message/CnpRequest.o"
+	@echo "... network/cnp/message/CnpRequest.i"
+	@echo "... network/cnp/message/CnpRequest.s"
+	@echo "... network/cnp/message/CnpResponse.o"
+	@echo "... network/cnp/message/CnpResponse.i"
+	@echo "... network/cnp/message/CnpResponse.s"
 	@echo "... network/cnp/server/ServerException.o"
 	@echo "... network/cnp/server/ServerException.i"
 	@echo "... network/cnp/server/ServerException.s"

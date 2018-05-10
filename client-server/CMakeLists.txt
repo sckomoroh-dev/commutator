@@ -1,0 +1,52 @@
+cmake_minimum_required(VERSION 3.9)
+project(commutator)
+
+set(CMAKE_CXX_STANDARD 17)
+
+add_executable(commutator
+        main.cpp
+        network/sockets/tcp/TcpClientSocket.h
+        network/sockets/tcp/TcpServerSocket.h
+        network/sockets/SocketException.h
+        network/sockets/tcp/TcpSocket.h
+        network/sockets/udp/UdpSocket.h
+        network/sockets/udp/UdpClientSocket.h
+        network/sockets/udp/UdpServerSocket.h
+        network/sockets/Socket.h
+        network/cnp/udp/UdpServer.h
+        network/cnp/udp/UdpClient.h
+        network/sockets/Socket.cpp
+        network/sockets/udp/UdpSocket.cpp
+        network/sockets/udp/UdpServerSocket.cpp
+        network/sockets/udp/UdpClientSocket.cpp
+        network/sockets/SocketException.cpp
+        network/sockets/tcp/TcpSocket.cpp
+        network/sockets/tcp/TcpServerSocket.cpp
+        network/sockets/tcp/TcpClientSocket.cpp
+        network/cnp/ServerException.cpp
+        network/cnp/ServerException.h
+        network/cnp/message/CnpStatus.h
+        network/cnp/udp/UdpServer.cpp
+        network/cnp/udp/UdpClient.cpp 
+		network/cnp/message/CnpRequest.cpp 
+		network/cnp/message/CnpRequest.h 
+		network/cnp/message/CnpResponse.cpp 
+		network/cnp/message/CnpResponse.h 
+		network/cnp/message/CnpVersions.h 
+		network/cnp/CnpException.cpp 
+		network/cnp/CnpException.h 
+		network/cnp/message/CnpMessage.cpp 
+		network/cnp/message/CnpMessage.h
+		network/sockets/platform/SocketPlatform.h
+		network/cnp/tcp/TcpClient.h
+		network/cnp/tcp/TcpClient.cpp
+		network/cnp/tcp/TcpServer.h
+		network/cnp/tcp/TcpServer.cpp)
+
+if(UNIX)
+	target_link_libraries(commutator pthread)
+endif(UNIX)
+
+if(MSVC)
+	target_link_libraries(commutator ws2_32.lib)
+endif(MSVC)

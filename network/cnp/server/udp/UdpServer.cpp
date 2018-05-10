@@ -2,7 +2,6 @@
 // Created by sckomoroh on 06.05.18.
 //
 
-#include <sstream>
 #include <future>
 #include <cstring>
 #include <chrono>
@@ -45,14 +44,17 @@ void UdpServer::waitInComingRequests()
     while (_needStopServer == false)
     {
         struct sockaddr_in targetAddress = { 0 };
-        uint32_t messageHeaderLen = readRequestLength(targetAddress);
+	    auto messageLen = readRequestLength(targetAddress);
 
-        if (messageHeaderLen < 1)
+        if (messageLen < 1)
         {
             continue;
         }
 
-        auto asyncRes = std::async(std::launch::async, UdpServer::clientMethod, this, std::forward<struct sockaddr_in>(targetAddress), std::forward<uint32_t>(messageHeaderLen));
+		auto request = readRequest(targetAddress, messageLen);
+
+        auto thread = std::thread(clientMethod, this, std::move(request));
+		thread.detach();
     }
 }
 
@@ -63,15 +65,13 @@ void UdpServer::stopServer()
     _udpServerSocket.close();
 }
 
-void UdpServer::clientMethod(UdpServer *thisPtr, struct sockaddr_in&& targetAddress, uint32_t&& messageLen)
+void UdpServer::clientMethod(UdpServer *thisPtr, std::shared_ptr<network::cnp::message::CnpRequest>&& request)
 {
-    auto request = thisPtr->readRequest(targetAddress, messageLen);
-
     auto response = thisPtr->getResponse(request);
 
     std::this_thread::sleep_for(std::chrono::seconds(1));
 
-    thisPtr->sendResponse(response, std::move(targetAddress));
+    thisPtr->sendResponse(response, std::move(request->targetAddress()));
 }
 
 uint32_t UdpServer::readRequestLength(struct sockaddr_in &clientSocket)
@@ -98,6 +98,7 @@ std::shared_ptr<CnpRequest> UdpServer::readRequest(const struct sockaddr_in &tar
     _udpServerSocket.readBuffer(static_cast<void *>(buffer.get()), messageLen);
 
     auto request = CnpRequest::fromString(buffer.get());
+	request->_targetAddress = targetAddress;
 
     return request;
 }

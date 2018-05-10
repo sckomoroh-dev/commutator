@@ -3,6 +3,7 @@
 //
 
 #include "TcpClientSocket.h"
+#include "../SocketException.h"
 
 using namespace network::sockets::tcp;
 
@@ -23,7 +24,7 @@ void TcpClientSocket::connect()
 
 void TcpClientSocket::sendBuffer(void *buffer, size_t bufferSize)
 {
-    if (send(_socket,
+    if (platform_send(_socket,
              buffer,
              bufferSize,
              MSG_WAITALL) < 1)
@@ -34,7 +35,7 @@ void TcpClientSocket::sendBuffer(void *buffer, size_t bufferSize)
 
 void TcpClientSocket::readBuffer(void *buffer, size_t bufferSize)
 {
-    if (recv(_socket,
+    if (platform_recv(_socket,
              buffer,
              bufferSize,
              MSG_WAITALL) < 1)

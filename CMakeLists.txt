@@ -27,6 +27,22 @@ add_executable(commutator
         network/cnp/server/ServerException.h
         network/cnp/server/udp/UdpServer.cpp
         network/cnp/message/CnpStatus.h
-        network/cnp/client/udp/UdpClient.cpp network/cnp/message/CnpRequest.cpp network/cnp/message/CnpRequest.h network/cnp/message/CnpResponse.cpp network/cnp/message/CnpResponse.h network/cnp/message/CnpVersions.h network/cnp/CnpException.cpp network/cnp/CnpException.h network/cnp/message/CnpMessage.cpp network/cnp/message/CnpMessage.h)
+        network/cnp/client/udp/UdpClient.cpp 
+		network/cnp/message/CnpRequest.cpp 
+		network/cnp/message/CnpRequest.h 
+		network/cnp/message/CnpResponse.cpp 
+		network/cnp/message/CnpResponse.h 
+		network/cnp/message/CnpVersions.h 
+		network/cnp/CnpException.cpp 
+		network/cnp/CnpException.h 
+		network/cnp/message/CnpMessage.cpp 
+		network/cnp/message/CnpMessage.h
+		network/sockets/platform/SocketPlatform.h)
 
-target_link_libraries(commutator pthread)
+if(UNIX)
+	target_link_libraries(commutator pthread)
+endif(UNIX)
+
+if(MSVC)
+	target_link_libraries(commutator ws2_32.lib)
+endif(MSVC)

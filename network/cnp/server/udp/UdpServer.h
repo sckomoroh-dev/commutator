@@ -42,7 +42,7 @@ namespace network
                     void waitInComingRequests();
 
                 private:
-                    static void clientMethod(UdpServer *thisPtr, struct sockaddr_in &&targetAddress, uint32_t&& firstMessageLen);
+                    static void clientMethod(UdpServer *thisPtr, std::shared_ptr<message::CnpRequest>&& request);
 
                     uint32_t readRequestLength(struct sockaddr_in &clientSocket);
 

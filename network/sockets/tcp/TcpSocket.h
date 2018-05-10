@@ -5,13 +5,7 @@
 #ifndef COMMUTATOR_TCPSOCKET_H
 #define COMMUTATOR_TCPSOCKET_H
 
-#include <unistd.h>
 #include <cstdint>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <cerrno>
-#include "../SocketException.h"
 #include "../Socket.h"
 
 namespace network

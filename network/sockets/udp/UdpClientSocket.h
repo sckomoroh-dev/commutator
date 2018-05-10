@@ -21,9 +21,9 @@ namespace network
 
                 UdpClientSocket() = default;
 
-                void sendBuffer(void *buffer, size_t bufferSize) const;
+                void sendBuffer(void *buffer, size_t bufferSize);
 
-                void readBuffer(void *buffer, size_t bufferSize) const;
+                void readBuffer(void *buffer, size_t bufferSize);
             };
         }
     }

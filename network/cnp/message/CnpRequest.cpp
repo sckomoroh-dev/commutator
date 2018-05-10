@@ -14,23 +14,23 @@ CnpVersion CnpRequest::version() const noexcept
     return _version;
 }
 
-const std::string CnpRequest::command() const noexcept
+std::string CnpRequest::command() const noexcept
 {
     return _command;
 }
 
-const std::string CnpRequest::data() const noexcept
+std::string CnpRequest::data() const noexcept
 {
     return _data;
 }
 
-const std::string CnpRequest::toString() const
+std::string CnpRequest::toString() const
 {
     std::ostringstream stringStream;
     stringStream << "CNP v" << versionToString(_version) << std::endl;
     stringStream << "Command: " << _command << std::endl;
 
-    if (_data.length() > 0)
+    if (!_data.empty())
     {
         stringStream << "Data: " << _data << std::endl;
     }
@@ -38,4 +38,9 @@ const std::string CnpRequest::toString() const
     stringStream << std::endl;
 
     return stringStream.str();
+}
+
+struct sockaddr_in CnpRequest::targetAddress() const noexcept
+{
+	return _targetAddress;
 }

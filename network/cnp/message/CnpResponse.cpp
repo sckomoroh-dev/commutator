@@ -3,7 +3,6 @@
 //
 
 #include <sstream>
-#include <iostream>
 
 #include "CnpResponse.h"
 
@@ -14,29 +13,29 @@ CnpVersion CnpResponse::version() const noexcept
     return _version;
 }
 
-const std::string CnpResponse::command() const noexcept
+std::string CnpResponse::command() const noexcept
 {
     return _command;
 }
 
-const std::string CnpResponse::data() const noexcept
+std::string CnpResponse::data() const noexcept
 {
     return _data;
 }
 
-const CnpStatus CnpResponse::status() const noexcept
+CnpStatus CnpResponse::status() const noexcept
 {
     return _status;
 }
 
-const std::string CnpResponse::toString() const
+std::string CnpResponse::toString() const
 {
     std::ostringstream stringStream;
     stringStream << "CNP v" << versionToString(_version) << std::endl;
     stringStream << "Command: " << _command << std::endl;
     stringStream << "Status: " << statusToString(_status) << std::endl;
 
-    if (_data.length() > 0)
+    if (!_data.empty())
     {
         stringStream << "Data: " << _data << std::endl;
     }
@@ -46,7 +45,7 @@ const std::string CnpResponse::toString() const
     return stringStream.str();
 }
 
-const std::string CnpResponse::statusToString(CnpStatus status) const
+std::string CnpResponse::statusToString(CnpStatus status) const
 {
     switch(status)
     {

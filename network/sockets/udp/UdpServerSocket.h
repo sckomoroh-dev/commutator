@@ -5,9 +5,7 @@
 #ifndef COMMUTATOR_UDPSERVERSOCKET_H
 #define COMMUTATOR_UDPSERVERSOCKET_H
 
-#include <memory>
 #include "UdpSocket.h"
-#include "UdpClientSocket.h"
 
 namespace network
 {

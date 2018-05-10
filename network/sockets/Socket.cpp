@@ -2,10 +2,8 @@
 // Created by sckomoroh on 05.05.18.
 //
 
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <zconf.h>
 #include "Socket.h"
+#include "SocketException.h"
 
 using namespace network::sockets;
 
@@ -15,14 +13,22 @@ Socket::Socket(const char* serverIp, int32_t port)
 {
     _targetSocketAddress.sin_family = AF_INET;
     _targetSocketAddress.sin_port = htons(port);
-    _targetSocketAddress.sin_addr.s_addr = inet_addr(serverIp);
+	if (inet_pton(AF_INET, serverIp, &_targetSocketAddress.sin_addr.s_addr) != 1)
+	{
+		throw SocketException("Invalid network address", errno);
+	}
+}
+
+struct sockaddr_in Socket::targetAddress() const noexcept
+{
+	return _targetSocketAddress;
 }
 
 void Socket::close()
 {
     if (_socket != -1)
     {
-        ::close(_socket);
+		PlatformCloseSocket(_socket);
         _socket = -1;
     }
 }

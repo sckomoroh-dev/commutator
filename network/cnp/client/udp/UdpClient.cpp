@@ -4,7 +4,7 @@
 
 #include "UdpClient.h"
 #include "../../message/CnpRequest.h"
-#include <utility>
+#include <cstring>
 
 using namespace network::cnp::message;
 using namespace network::cnp::client::udp;
@@ -14,7 +14,7 @@ UdpClient::UdpClient(const char *serverIp, int32_t port)
 {
 }
 
-const std::shared_ptr<CnpResponse> UdpClient::readResponse() const
+const std::shared_ptr<CnpResponse> UdpClient::readResponse()
 {
     uint32_t messageLen;
 

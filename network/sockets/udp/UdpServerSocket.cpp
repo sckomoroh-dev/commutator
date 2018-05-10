@@ -3,6 +3,7 @@
 //
 
 #include "UdpServerSocket.h"
+#include "../SocketException.h"
 
 using namespace network::sockets::udp;
 
@@ -23,17 +24,17 @@ void UdpServerSocket::bind() const
 
 struct sockaddr_in UdpServerSocket::readBuffer(void *buffer, size_t bufferSize) const
 {
-    struct sockaddr_in clientSocketAddr;
+    struct sockaddr_in clientSocketAddr = { 0 };
 
-    socklen_t socketAddressStructureSize = sizeof(clientSocketAddr);
-    if (recvfrom(_socket,
+    socklen_t socketAddressStructureSize = sizeof clientSocketAddr;
+    if (platform_recvfrom(_socket,
                  buffer,
                  bufferSize,
-                 MSG_WAITALL,
-                 reinterpret_cast<struct sockaddr *>(&clientSocketAddr),
+                 0,
+                 &clientSocketAddr,
                  &socketAddressStructureSize) < 1)
     {
-        throw SocketException("Unable to receive data from socket", errno);
+        throw SocketException("Unable to receive data from socket", platform_socket_error());
     }
 
     return clientSocketAddr;
@@ -41,13 +42,12 @@ struct sockaddr_in UdpServerSocket::readBuffer(void *buffer, size_t bufferSize) 
 
 void UdpServerSocket::sendBuffer(void *buffer, size_t bufferSize, struct sockaddr_in &targetAddress) const
 {
-    if (sendto(_socket,
+    if (platform_sendto(_socket,
                buffer,
                bufferSize,
-               MSG_WAITALL,
-               reinterpret_cast<struct sockaddr *>(&targetAddress),
-               sizeof(targetAddress)) < 1)
+               0,
+               targetAddress) < 1)
     {
-        throw SocketException("Unable to send data to socket", errno);
+        throw SocketException("Unable to send data to socket", platform_socket_error());
     }
 }

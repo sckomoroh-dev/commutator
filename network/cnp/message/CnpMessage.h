@@ -20,16 +20,17 @@ namespace network
             class CnpMessage
             {
             public:
-                CnpMessage() = default;
-
                 CnpMessage(const CnpMessage &) = delete;
 
                 CnpMessage(CnpMessage &&) = delete;
 
                 // TODO: Make deleted the operator =
 
+            protected:
+				CnpMessage() = default;
+			
             public:
-                virtual const std::string toString() const = 0;
+                virtual std::string toString() const = 0;
 
             protected:
                 static std::map<std::string, std::string> requestToMap(const std::string &request);

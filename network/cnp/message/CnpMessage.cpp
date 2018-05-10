@@ -18,7 +18,7 @@ std::map<std::string, std::string> CnpMessage::requestToMap(const std::string &r
         if (requestField.substr(0, 3) == "CNP")
         {
             auto messageVersion = getMessageVersion(requestField);
-            if (messageVersion.length() > 0)
+            if (!messageVersion.empty())
             {
                 result.insert(std::make_pair("Version", messageVersion));
             }
@@ -78,29 +78,30 @@ std::list<std::string> CnpMessage::splitMessageString(const std::string &inputSt
                                                       std::function<std::string(std::string)> itemProcessingFunc)
 {
     std::list<std::string> result;
-    auto pos = 0ul;
-    auto nextPos = 0ul;
+    auto pos = inputString.find(delimiter, 0);
+	decltype(pos) nextPos = 0;
 
-    do
+	do
     {
-        pos = inputString.find(delimiter, nextPos);
         if (pos != std::string::npos)
         {
             auto requestItem = inputString.substr(nextPos, pos - nextPos);
             requestItem = itemProcessingFunc(requestItem);
-            if (requestItem.length() > 0)
+            if (!requestItem.empty())
             {
                 result.push_back(requestItem);
             }
 
             nextPos = pos + 1;
         }
+
+		pos = inputString.find(delimiter, nextPos);
     }
     while (pos != std::string::npos && !single);
 
     auto requestItem = inputString.substr(nextPos);
     requestItem = itemProcessingFunc(requestItem);
-    if (requestItem.length() > 0)
+    if (!requestItem.empty())
     {
         result.push_back(requestItem);
     }

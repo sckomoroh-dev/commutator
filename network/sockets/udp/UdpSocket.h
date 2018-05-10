@@ -6,11 +6,7 @@
 #define COMMUTATOR_UDPSOCKET_H
 
 #include <cstdint>
-#include <unistd.h>
-#include <cerrno>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include "../SocketException.h"
+
 #include "../Socket.h"
 
 namespace network
@@ -22,7 +18,7 @@ namespace network
             class UdpSocket : public Socket
             {
             protected:
-                UdpSocket(const char*  serverIp, int32_t port);
+                UdpSocket(const char* serverIp, int32_t port);
 
                 UdpSocket() = default;
             };

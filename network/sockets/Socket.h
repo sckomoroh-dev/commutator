@@ -5,6 +5,8 @@
 #ifndef COMMUTATOR_SOCKET_H
 #define COMMUTATOR_SOCKET_H
 
+#include "platform/SocketPlatform.h"
+
 #include <cstdint>
 #include <memory>
 
@@ -15,12 +17,14 @@ namespace network
         class Socket
         {
         protected:
-            int32_t _socket;
+			PlatformSocket _socket;
             struct sockaddr_in _targetSocketAddress;
 
         public:
             void close();
 
+			struct sockaddr_in targetAddress() const noexcept;
+		
         protected:
             Socket() = default;
 
@@ -28,7 +32,7 @@ namespace network
 
         protected:
             template<typename TTargetSocketType>
-            std::unique_ptr<TTargetSocketType> createSocket(const int32_t& socketDescriptor, const struct sockaddr_in& socketAddress)
+            std::unique_ptr<TTargetSocketType> createSocket(PlatformSocket& socketDescriptor, const struct sockaddr_in& socketAddress)
             {
                 auto targetSocket = std::make_unique<TTargetSocketType>();
                 targetSocket->_socket = socketDescriptor;

@@ -25,13 +25,13 @@ namespace network
             public:
                 CnpVersion version() const noexcept;
 
-                const std::string command() const noexcept;
+                std::string command() const noexcept;
 
-                const std::string data() const noexcept;
+                std::string data() const noexcept;
 
-                const CnpStatus status() const noexcept;
+                CnpStatus status() const noexcept;
 
-                const std::string toString() const final;
+                std::string toString() const final;
 
                 template<typename TRequestString>
                 static std::shared_ptr<CnpResponse> fromString(TRequestString &&requestString)
@@ -66,7 +66,7 @@ namespace network
                 }
 
                 template<typename TCommand>
-                static std::shared_ptr<CnpResponse> create(CnpVersion version, TCommand &&command, CnpStatus status)
+                static std::shared_ptr<CnpResponse> create(CnpVersion version, TCommand&& command, CnpStatus status)
                 {
                     auto request = std::make_shared<CnpResponse>();
 
@@ -77,10 +77,9 @@ namespace network
                 };
 
                 template<typename TCommand, typename TData>
-                static std::shared_ptr<CnpResponse>
-                create(CnpVersion version, TCommand &command, TData &&data, CnpStatus status)
+                static std::shared_ptr<CnpResponse> create(CnpVersion version, TCommand&& command, TData &&data, CnpStatus status)
                 {
-                    auto request = create(version, command, status);
+                    auto request = CnpResponse::create(version, command, status);
 
                     request->_data = std::forward<const std::string>(data);
 
@@ -88,10 +87,10 @@ namespace network
                 };
 
             private:
-                const std::string statusToString(CnpStatus status) const;
+                std::string statusToString(CnpStatus status) const;
 
                 template<typename TStatusString>
-                static const CnpStatus stringToStatus(TStatusString &&statusString)
+                static CnpStatus stringToStatus(TStatusString &&statusString)
                 {
                     std::string statusStr(std::forward<std::string>(statusString));
                     if (statusStr == "OK")

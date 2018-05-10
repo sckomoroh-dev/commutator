@@ -6,7 +6,6 @@
 #define COMMUTATOR_UDPCLIENT_H
 
 
-#include <cstring>
 #include <future>
 #include "../../message/CnpVersions.h"
 #include "../../message/CnpRequest.h"
@@ -24,7 +23,7 @@ namespace network
                 class UdpClient
                 {
                 private:
-                    network::sockets::udp::UdpClientSocket _udpClientSocket;
+                    sockets::udp::UdpClientSocket _udpClientSocket;
 
                 public:
                     UdpClient(const char *serverIp, int32_t port);
@@ -56,7 +55,7 @@ namespace network
                         _udpClientSocket.sendBuffer(static_cast<void *>(const_cast<char*>(requestString.c_str())), bufferLen);
                     }
 
-                    const std::shared_ptr<message::CnpResponse> readResponse() const;
+                    const std::shared_ptr<message::CnpResponse> readResponse();
                 };
             }
         }

@@ -11,12 +11,6 @@ using namespace network::sockets;
 
 std::atomic<bool> g_init(false);
 
-template <typename F, typename... Ts>
-inline auto reallyAsync(F&& f, Ts&&... params)
-{
-    return std::async(std::launch::async, std::forward<F>(f), std::forward<Ts>(params)...);
-}
-
 void serverThread()
 {
     printf ("Creating server\n");
@@ -39,12 +33,12 @@ void clientThread()
 {
     while (g_init == false)
     {
-        sleep(1);
+        std::this_thread::sleep_for(std::chrono::seconds(1));
     }
 
-    for (auto i=0; i<100; i++)
+    for (auto i=0; i<1; i++)
     {
-        auto asyncRes = reallyAsync([i]()
+        auto thread = std::thread([i]()
         {
             printf("");
             network::cnp::client::udp::UdpClient udpClient("127.0.0.1", 8090);
@@ -61,13 +55,13 @@ void clientThread()
             printf("Response:\n-------------\n%s\n-------------\n\n", response->data().c_str());
         });
 
-        asyncRes.get();
+        thread.detach();
     }
 }
 
 int main()
 {
-    printf("Start\n");
+	platform_init_sockets();
 
     std::thread server(serverThread);
     std::thread client(clientThread);
@@ -76,6 +70,10 @@ int main()
     client.join();
 
     printf("End\n");
+
+	std::this_thread::sleep_for(std::chrono::seconds(60));
+
+	platform_cleanup_sockets();
 
     return 0;
 }
